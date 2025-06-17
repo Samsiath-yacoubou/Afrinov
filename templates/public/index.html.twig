@@ -1,0 +1,1097 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #6f42c1;
+            --primary-light: #9d7aff;
+            --primary-dark: #4d1d9b;
+            --secondary: #2d3748;
+            --light: #f9f9ff;
+            --white: #ffffff;
+            --gray: #4a5568;
+            --light-gray: #e2e8f0;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+        
+        .highlight {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        .highlight:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(111, 66, 193, 0.2);
+            z-index: -1;
+            transition: height 0.3s ease;
+        }
+        
+        .highlight:hover:after {
+            height: 40%;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(111, 66, 193, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(111, 66, 193, 0.4);
+        }
+        
+        .btn-primary:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover:after {
+            opacity: 1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 12rem 0 10rem;
+            background: linear-gradient(160deg, #f3f0ff 0%, #e9e3ff 100%);
+            color: var(--secondary);
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--gray);
+            opacity: 0.9;
+        }
+        
+        /* Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 1;
+            opacity: 0.8;
+            mix-blend-mode: multiply;
+        }
+        
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(157, 122, 255, 0.4);
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .blob-2 {
+            width: 600px;
+            height: 600px;
+            background: rgba(111, 66, 193, 0.3);
+            bottom: -200px;
+            left: -200px;
+            animation: float 10s ease-in-out infinite 2s;
+        }
+        
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: rgba(77, 29, 155, 0.25);
+            top: 50%;
+            left: 20%;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+        
+        .blob-4 {
+            width: 200px;
+            height: 200px;
+            background: rgba(157, 122, 255, 0.35);
+            bottom: 100px;
+            right: 20%;
+            animation: float 6s ease-in-out infinite 0.5s;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 8rem 0;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 5rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-card {
+            background: rgba(157, 122, 255, 0.4);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(111, 66, 193, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(111, 66, 193, 0.15);
+            color: var(--white);
+            border-color: transparent;
+        }
+        
+        .feature-card:hover h3,
+        .feature-card:hover p {
+            color: var(--white);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--primary);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        .feature-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover h3:after {
+            width: 100%;
+            background: var(--white);
+        }
+        
+        /* FAQ Section - Styles révisés */
+        .faq {
+            padding: 8rem 0;
+            background: var(--light);
+            position: relative;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .faq-item.active {
+            box-shadow: 0 10px 30px rgba(111, 66, 193, 0.15);
+            border-color: var(--primary-light);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            background: var(--white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f8f5ff;
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--white);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 2rem 2rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 8rem 0;
+            background: rgba(157, 122, 255, 0.4);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta .btn-primary:hover {
+            color: var(--white);
+        }
+        
+        .cta .highlight:after {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Innovations Section */
+        .innovations {
+            padding: 8rem 0;
+            position: relative;
+            background: #f9f9ff;
+        }
+        
+        .innovations-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-intro {
+            max-width: 600px;
+            margin-bottom: 3rem;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-intro h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .section-intro p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .innovation-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .innovation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(123, 97, 255, 0.1);
+        }
+        
+        .card-img-container {
+            height: 160px;
+            background-color: #f3f0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .innovation-card:hover .card-img {
+            transform: scale(1.05);
+        }
+        
+        .card-icon-placeholder {
+            font-size: 2.5rem;
+            color: var(--primary);
+            opacity: 0.1;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            line-height: 1.4;
+        }
+        
+        .card-description {
+            color: #64748b;
+            font-size: 0.8125rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.25rem 1.25rem;
+        }
+        
+        .card-country {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--primary);
+            background: #f3f0ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+        }
+        
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .card-link:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* Modal Styles */
+        .modal-innovation {
+            z-index: 1050;
+        }
+        
+        .modal-innovation .modal-dialog {
+            max-width: 600px;
+            margin: 1.75rem auto;
+        }
+        
+        .modal-innovation .modal-content {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .modal-innovation .modal-header {
+            border-bottom: none;
+            padding: 1.5rem 1.5rem 0;
+            position: relative;
+        }
+        
+        .modal-innovation .modal-header .btn-close {
+            position: absolute;
+            right: 1.25rem;
+            top: 1.25rem;
+            background: rgba(0,0,0,0.05);
+            padding: 0.5rem;
+            border-radius: 50%;
+            opacity: 0.7;
+            transition: all 0.2s;
+        }
+        
+        .modal-innovation .modal-header .btn-close:hover {
+            opacity: 1;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .modal-innovation .modal-body {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .innovation-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .innovation-logo-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background-color: #f3f0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 1.25rem;
+            overflow: hidden;
+        }
+        
+        .innovation-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .innovation-icon-placeholder {
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.2;
+        }
+        
+        .innovation-info {
+            flex-grow: 1;
+        }
+        
+        .innovation-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .innovation-sector {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: #f3f0ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8125rem;
+        }
+        
+        .innovation-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-title {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--secondary);
+        }
+        
+        .content-text {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+        
+        .modal-footer-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f1f1;
+        }
+        
+        /* Collaboration Section */
+        .collaboration {
+            padding: 6rem 0;
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .collaboration-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .collaboration-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .collaboration-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Boutons élégants */
+        .btn-visit {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(123, 97, 255, 0.2);
+        }
+        
+        .btn-visit:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(123, 97, 255, 0.3);
+        }
+        
+        .btn-collaborate {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(111, 66, 193, 0.3);
+        }
+        
+        .btn-collaborate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(111, 66, 193, 0.4);
+            color: white;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 8rem 0 6rem;
+            }
+            
+            .features, .faq, .cta, .innovations {
+                padding: 6rem 0;
+            }
+            
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .faq-question {
+                padding: 1.25rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 1.5rem 1.5rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .innovation-header {
+                flex-direction: column;
+            }
+            
+            .innovation-logo-container {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .modal-footer-custom {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: flex-start;
+            }
+        }
+
+        .btn-see-more {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-see-more:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+
+        .btn-see-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-see-more:hover i {
+            transform: translateX(3px);
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <!-- 🌈 Hero Section -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1 class="hero-title">Bienvenue à bord des innovations qui façonnent l'écosystème numérique africain.</h1>
+            <p class="hero-subtitle">Afrinov : là où le potentiel rencontre l'opportunité. Inscrivez votre startup et devenez le prochain à impacter le monde.</p>
+            <a href="{{ path('app_login') }}" class="btn btn-primary">Rejoindre →</a>
+        </div>
+    </section>
+
+    <!-- Innovations Section -->
+    <section class="innovations">
+        <div class="innovations-container">
+            <div class="section-intro animate__animated animate__fadeIn">
+                <h2>Découvrez les <span class="highlight">innovations</span> africaines</h2>
+                <p>Explorez les startups et projets les plus prometteurs du continent africain. Des solutions locales avec un impact global.</p>
+            </div>
+            
+            <div class="card-grid">
+                {% for inov in innovations %}
+                <div class="innovation-card" data-bs-toggle="modal" data-bs-target="#detailModal{{ inov.id }}">
+                    <div class="card-img-container">
+                        {% if inov.logo %}
+                            <img src="{{ asset('uploads/' ~ inov.logo) }}" alt="{{ inov.nom }}" class="card-img">
+                        {% else %}
+                            <i class="bi bi-lightbulb card-icon-placeholder"></i>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{ inov.nom }}</h3>
+                        <p class="card-description">{{ inov.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-country">{{ inov.pays }}</span>
+                        <a href="{{ inov.lien }}" target="_blank" class="card-link" onclick="event.stopPropagation()">
+                            Voir <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Modal Détails innovation -->
+                <div class="modal fade modal-innovation" id="detailModal{{ inov.id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="innovation-header">
+                                    <div class="innovation-logo-container">
+                                        {% if inov.logo %}
+                                            <img src="{{ asset('uploads/' ~ inov.logo) }}" alt="{{ inov.nom }}" class="innovation-logo">
+                                        {% else %}
+                                            <i class="bi bi-lightbulb innovation-icon-placeholder"></i>
+                                        {% endif %}
+                                    </div>
+                                    <div class="innovation-info">
+                                        <h2 class="innovation-title">{{ inov.nom }}</h2>
+                                        <span class="innovation-sector">{{ inov.secteur }}</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="innovation-content">
+                                    <h5 class="content-title">Description</h5>
+                                    <p class="content-text">{{ inov.description }}</p>
+                                </div>
+                                
+                                <div class="innovation-content">
+                                    <h5 class="content-title">Pays</h5>
+                                    <p class="content-text">{{ inov.pays }}</p>
+                                </div>
+                                
+                                <div class="modal-footer-custom">
+                                    <a href="{{ inov.lien }}" target="_blank" class="btn btn-visit">
+                                        <i class="bi bi-box-arrow-up-right me-1"></i> Visiter le site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="col-12">
+                    <div class="alert alert-info text-center py-4">
+                        Aucune innovation trouvée.
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Bouton "Voir plus" -->
+            <div class="text-center mt-5 mb-4" style="margin-top: 3rem !important;">
+                <a href="{{ path('app_librai') }}" class="btn btn-primary btn-see-more px-4 py-2">
+                    Voir plus d'innovations <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="collaboration">
+        <div class="collaboration-content animate__animated animate__fadeIn">
+            <h2 class="collaboration-title">Prêt à collaborer avec ces innovateurs ?</h2>
+            <p class="collaboration-text">Rejoignez notre plateforme pour connecter avec les startups les plus prometteuses d'Afrique et participez à l'essor de l'innovation sur le continent.</p>
+            <a href="{{ path('app_colab') }}" class="btn btn-collaborate">Collaborer maintenant →</a>
+        </div>
+    </section>
+
+    <!-- 💎 Features Section -->
+    <section id="why" class="features">
+        <div class="blob blob-3" style="left: 70%; top: 20%;"></div>
+        <div class="blob blob-4" style="right: 10%; bottom: 30%;"></div>
+        
+        <h2 class="section-title animate__animated animate__fadeIn">Pourquoi <span class="highlight">Afrinov</span> ?</h2>
+        
+        <div class="features-grid">
+            {% for feature in [
+                {
+                    'title': 'Réseautage stratégique',
+                    'content': 'L’innovation est une aventure collective. Connectez-vous facilement avec d’autres innovateurs, partagez vos expériences et créez des synergies puissantes.'
+                },
+                {
+                    'title': 'Visibilité mondiale',
+                    'content': 'Votre innovation mérite d’être trouvée. Grâce à un référencement naturel optimisé, Afrinov booste votre présence sur les moteurs de recherche.'
+                },
+                {
+                    'title': 'Suivi EcoNumAfriq',
+                    'content': 'Suivez les tendances, les innovations et les acteurs clés qui façonnent ce marché en pleine croissance.'
+                }
+            ] %}
+            <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- ❓ FAQ Section - Version corrigée -->
+    <section class="faq">
+        <h2 class="section-title animate__animated animate__fadeIn">Questions <span class="highlight">Fréquentes</span></h2>
+        
+        <div class="faq-container">
+            {% for item in [
+                {
+                    'question': 'Comment fonctionne l\'algorithme de matching d\'AfriNov ?',
+                    'answer': 'Notre IA analyse 72 critères techniques, commerciaux et culturels pour créer des matchs pertinents entre startups et investisseurs.'
+                },
+                {
+                    'question': 'Quels sont les pays africains couverts par votre plateforme ?',
+                    'answer': 'Nous couvrons actuellement 25 pays africains avec une forte concentration en Afrique de l\'Ouest et de l\'Est.'
+                },
+                {
+                    'question': 'Quel est le coût d\'utilisation de la plateforme ?',
+                    'answer': 'L\'inscription de base est gratuite. Nous proposons ensuite 3 niveaux d\'abonnement adaptés aux différents stades de croissance.'
+                },
+                {
+                    'question': 'Comment garantissez-vous la qualité des investisseurs ?',
+                    'answer': 'Tous nos investisseurs sont vérifiés (KYC) et doivent prouver leur historique d\'investissement.'
+                },
+                {
+                    'question': 'Puis-je utiliser AfriNov si ma startup est à un stade très early ?',
+                    'answer': 'Absolument ! Nous avons des programmes spécifiques pour les pré-seed et seed.'
+                }
+            ] %}
+            <div class="faq-item animate__animated animate__fadeIn" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+                <button class="faq-question">
+                    <span>{{ item.question }}</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>{{ item.answer }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- 🎯 CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2 class="cta-title animate__animated animate__fadeIn">Prêt à <span class="highlight">transformer</span> votre startup ?</h2>
+            <p class="cta-subtitle animate__animated animate__fadeIn" style="animation-delay: 0.2s">Rejoignez la révolution Afrinov et accélérez votre croissance avec nos solutions sur mesure.</p>
+            <a href="{{ path('app_register') }}" class="btn btn-primary animate__animated animate__pulse animate__infinite" style="animation-duration: 2s">Commencer maintenant →</a>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Système FAQ fiable
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const faqItem = this.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = this.querySelector('.faq-icon');
+                
+                // Fermer tous les autres FAQ
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = '0';
+                        item.querySelector('.faq-icon').textContent = '+';
+                    }
+                });
+                
+                // Basculer l'état actuel
+                if (isActive) {
+                    faqItem.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                    icon.textContent = '+';
+                } else {
+                    faqItem.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.textContent = '-';
+                }
+            });
+        });
+
+        // Gestion
+
+        // Gestion des modales Bootstrap
+        if (typeof bootstrap !== 'undefined') {
+            document.querySelectorAll('[data-bs-toggle="modal"]').forEach(element => {
+                element.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-bs-target');
+                    const modal = document.querySelector(modalId);
+                    if (modal) {
+                        const modalInstance = new bootstrap.Modal(modal);
+                        modalInstance.show();
+                    }
+                });
+            });
+        }
+
+        // Empêcher la propagation sur les liens dans les cartes
+        document.querySelectorAll('.innovation-card a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+
+        // Animation au scroll
+        function animateOnScroll() {
+            document.querySelectorAll('.animate__animated').forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList[1];
+                    element.classList.add(animationClass);
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+    });
+    
+    </script>
+{% endblock %}

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Violet</title>
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --primary-dark: #6a1b9a;
+            --primary-light: #b39ddb;
+            --primary-very-light: rgba(138, 43, 226, 0.05);
+            --secondary: #e1bee7;
+            --text: #333;
+            --light-text: #757575;
+            --bg: #f5f5f5;
+            --card: #fff;
+            --danger: #ff5252;
+            --success: #4caf50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--card);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: var(--primary-very-light);
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 20% 70%, rgba(138, 43, 226, 0.05) 0%, transparent 25%);
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 15px;
+            max-width: 80%;
+            position: relative;
+            animation: fadeIn 0.3s;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.current-user {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 10px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .message-content {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 18px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            word-break: break-word;
+            min-width: 150px;
+        }
+
+        .current-user .message-content {
+            background: var(--primary);
+            color: white;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .user-name {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .current-user .user-name {
+            color: white;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            color: var(--light-text);
+        }
+
+        .current-user .message-time {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .reply-container {
+            background: rgba(0,0,0,0.05);
+            border-left: 3px solid var(--primary);
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .current-user .reply-container {
+            border-left-color: white;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .reply-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .current-user .reply-author {
+            color: white;
+        }
+
+        .message-actions {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -40px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 10;
+            background: white;
+            padding: 5px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .message:hover .message-actions {
+            opacity: 1;
+        }
+
+        .action-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .reply-btn {
+            color: var(--primary);
+        }
+
+        .delete-btn {
+            color: var(--danger);
+        }
+
+        .edit-btn {
+            color: var(--primary-dark);
+        }
+
+        #message-form {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+
+        #message-input {
+            flex: 1;
+            border: 2px solid #eee;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            resize: none;
+            transition: border 0.3s;
+            min-height: 50px;
+            max-height: 150px;
+        }
+
+        #message-input:focus {
+            border-color: var(--primary-light);
+        }
+
+        #send-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #send-button:hover {
+            background: var(--primary-dark);
+        }
+
+        #send-button:disabled {
+            background: var(--primary-light);
+            cursor: not-allowed;
+        }
+
+        .replying-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: var(--secondary);
+            border-top: 1px solid #e1bee7;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .replying-info {
+            color: var(--text);
+        }
+
+        .replying-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .cancel-reply {
+            background: none;
+            border: none;
+            color: var(--danger);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .message-text {
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 5px 15px;
+            font-style: italic;
+            color: var(--light-text);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flash-messages {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .flash-message {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideIn 0.3s forwards;
+        }
+
+        .flash-success {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .flash-error {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .highlight {
+            animation: highlight 1.5s ease-out;
+        }
+
+        @keyframes highlight {
+            0% { background-color: rgba(138, 43, 226, 0.3); }
+            100% { background-color: transparent; }
+        }
+
+        .editing-message {
+            position: relative;
+        }
+
+        .editing-message::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px dashed var(--primary);
+            border-radius: 22px;
+            pointer-events: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(138, 43, 226, 0.05);
+            animation: float 15s infinite ease-in-out;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 10%;
+            left: -50px;
+            animation-delay: 3s;
+        }
+
+        .circle-3 {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 6s;
+        }
+
+        .dashboard-header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem var(--content-padding);
+    background: var(--light);
+    border-bottom: 1px solid var(--gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 3rem;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.nav-pro {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-pro .nav-item {
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-pro .nav-item:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.nav-pro .nav-item.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(123, 97, 255, 0.25);
+}
+
+/* Espace utilisateur amélioré */
+.user-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    position: relative;
+}
+
+.notification-icon {
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.notification-icon:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.badge {
+    font-size: 0.65rem;
+    padding: 0.25em 0.45em;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-avatar:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(123, 97, 255, 0.2);
+}
+
+/* Dropdown Profil Premium */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    width: 240px;
+    padding: 0.75rem 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-header {
+    padding: 0.75rem 1.25rem 0.5rem;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--dark);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.925rem;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-light);
+    padding-left: 1.75rem;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary);
+}
+
+.dropdown-divider {
+    border-top: 1px solid var(--gray);
+    margin: 0.5rem 0;
+}
+    </style>
+</head>
+<body>
+
+
+    
+    
+    
+    <div class="chat-container">
+        <!-- Cercles flottants -->
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+
+        <div id="chat-messages">
+            {% for message in messages %}
+                <div class="message {% if app.user and message.author.id == app.user.id %}current-user{% endif %}" 
+                     data-id="{{ message.id }}" data-author-name="{{ message.author.prenom }}">
+                    
+                    <div class="user-avatar" style="background-image: {% if message.author.photoprofil %}url('{{ message.author.photoprofil }}'){% else %}none{% endif %};">
+                        {% if not message.author.photoprofil %}{{ message.author.prenom|first|upper }}{% endif %}
+                    </div>
+                    
+                    <div class="message-content">
+                        {% if message.replyTo %}
+                            <div class="reply-container" data-reply-id="{{ message.replyTo.id }}">
+                                <span class="reply-author">{{ message.replyTo.author.prenom }}</span>
+                                {{ message.replyTo.content|length > 30 ? message.replyTo.content|slice(0, 30) ~ '...' : message.replyTo.content }}
+                            </div>
+                        {% endif %}
+                        
+                        <div class="message-header">
+                            <span class="user-name">{{ message.author.prenom }}</span>
+                            <span class="message-time">{{ message.createdAt|date('H:i') }}</span>
+                        </div>
+                        
+                        <div class="message-text">{{ message.content }}</div>
+                    </div>
+                    
+                    <div class="message-actions">
+                        <button class="action-btn reply-btn" data-action="reply" data-message-id="{{ message.id }}" title="Répondre">
+                            <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
+                        </button>
+                        
+                        {% if app.user and message.author.id == app.user.id %}
+                            <button class="action-btn edit-btn" data-action="edit" data-message-id="{{ message.id }}" title="Modifier">
+                                <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                            </button>
+                            
+                            <button class="action-btn delete-btn" data-action="delete" data-message-id="{{ message.id }}" title="Supprimer">
+                                <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"/></svg>
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="replying-indicator" class="replying-indicator" style="display: none;">
+            <div class="replying-info">
+                Répondre à <span class="replying-author" id="replying-author"></span>: 
+                <span id="replying-content"></span>
+            </div>
+            <button class="cancel-reply" id="cancel-reply">×</button>
+        </div>
+
+        <div id="typing-indicator" class="typing-indicator"></div>
+
+        <form id="message-form" action="{{ path('send') }}" method="post">
+            <textarea id="message-input" name="content" placeholder="Écrivez votre message..." rows="1" required></textarea>
+            <input type="hidden" id="reply-to" name="replyTo">
+            <input type="hidden" id="edit-message-id" name="editId">
+            <button type="submit" id="send-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chat = {
+                elements: {
+                    messages: document.getElementById('chat-messages'),
+                    form: document.getElementById('message-form'),
+                    input: document.getElementById('message-input'),
+                    replyInput: document.getElementById('reply-to'),
+                    editInput: document.getElementById('edit-message-id'),
+                    replyIndicator: document.getElementById('replying-indicator'),
+                    replyAuthor: document.getElementById('replying-author'),
+                    replyContent: document.getElementById('replying-content'),
+                    cancelReply: document.getElementById('cancel-reply'),
+                    typingIndicator: document.getElementById('typing-indicator'),
+                    sendButton: document.getElementById('send-button')
+                },
+                state: {
+                    lastId: {{ messages|length ? messages|last.id : 0 }},
+                    currentUser: {{ app.user ? app.user.id : 'null' }},
+                    isNearBottom: true,
+                    updateInterval: 2000,
+                    updateTimer: null,
+                    isEditing: false,
+                    editMessageElement: null
+                },
+                init() {
+                    this.setupEventListeners();
+                    this.startUpdateChecker();
+                    this.scrollToBottom();
+                },
+                setupEventListeners() {
+                    // Auto-resize textarea
+                    this.elements.input.addEventListener('input', function() {
+                        this.style.height = 'auto';
+                        this.style.height = Math.min(this.scrollHeight, 150) + 'px';
+                    });
+                    
+                    // Form submission
+                    this.elements.form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        
+                        const content = this.elements.input.value.trim();
+                        if (!content) return;
+                        
+                        this.elements.sendButton.disabled = true;
+                        
+                        if (this.state.isEditing && this.state.editMessageElement) {
+                            // Envoi de la modification
+                            const formData = new FormData(this.elements.form);
+                            formData.append('_method', 'PUT');
+                            
+                            fetch(this.elements.form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    this.state.editMessageElement.querySelector('.message-text').textContent = content;
+                                    this.cancelEdit();
+                                    this.elements.input.focus();
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            })
+                            .finally(() => {
+                                this.elements.sendButton.disabled = false;
+                            });
+                        } else {
+                            // Envoi normal
+                            this.elements.form.submit();
+                        }
+                    });
+                    
+                    // Cancel reply
+                    this.elements.cancelReply.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.cancelReply();
+                    });
+                    
+                    // Dynamic actions
+                    this.elements.messages.addEventListener('click', (e) => {
+                        const btn = e.target.closest('[data-action]');
+                        if (!btn) return;
+                        
+                        const action = btn.dataset.action;
+                        const messageId = btn.dataset.messageId;
+                        
+                        if (action === 'reply') {
+                            this.setupReply(messageId);
+                        } else if (action === 'delete') {
+                            this.deleteMessage(messageId);
+                        } else if (action === 'edit') {
+                            this.setupEdit(messageId);
+                        }
+                    });
+                    
+                    // Scroll handling
+                    this.elements.messages.addEventListener('scroll', () => {
+                        this.state.isNearBottom = this.elements.messages.scrollTop + 
+                            this.elements.messages.clientHeight > 
+                            this.elements.messages.scrollHeight - 100;
+                    });
+                },
+                setupReply(messageId) {
+                    if (this.state.isEditing) {
+                        this.cancelEdit();
+                    }
+                    
+                    const messageElement = document.querySelector(`[data-id="${messageId}"]`);
+                    const author = messageElement.dataset.authorName;
+                    const content = messageElement.querySelector('.message-text').textContent.trim();
+                    
+                    this.elements.replyAuthor.textContent = author;
+                    this.elements.replyContent.textContent = content.length > 50 ? 
+                        content.substring(0, 50) + '...' : content;
+                    this.elements.replyInput.value = messageId;
+                    this.elements.replyIndicator.style.display = 'flex';
+                    this.elements.input.focus();
+                    this.focusMessage(messageId);
+                },
+                cancelReply() {
+                    this.elements.replyAuthor.textContent = '';
+                    this.elements.replyContent.textContent = '';
+                    this.elements.replyInput.value = '';
+                    this.elements.replyIndicator.style.display = 'none';
+                },
+                setupEdit(messageId) {
+                    if (this.elements.replyInput.value) {
+                        this.cancelReply();
+                    }
+                    
+                    const messageElement = document.querySelector(`[data-id="${messageId}"]`);
+                    const contentElement = messageElement.querySelector('.message-text');
+                    const currentContent = contentElement.textContent.trim();
+                    
+                    // Mettre en évidence le message en cours d'édition
+                    if (this.state.editMessageElement) {
+                        this.state.editMessageElement.classList.remove('editing-message');
+                    }
+                    messageElement.classList.add('editing-message');
+                    
+                    this.elements.input.value = currentContent;
+                    this.elements.editInput.value = messageId;
+                    this.elements.input.focus();
+                    this.state.isEditing = true;
+                    this.state.editMessageElement = messageElement;
+                    
+                    // Change button icon to checkmark
+                    this.elements.sendButton.innerHTML = `
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                        </svg>
+                    `;
+                    
+                    this.focusMessage(messageId);
+                },
+                cancelEdit() {
+                    if (this.state.editMessageElement) {
+                        this.state.editMessageElement.classList.remove('editing-message');
+                    }
+                    
+                    this.elements.input.value = '';
+                    this.elements.editInput.value = '';
+                    this.state.isEditing = false;
+                    this.state.editMessageElement = null;
+                    
+                    // Reset button to send icon
+                    this.elements.sendButton.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    `;
+                },
+                deleteMessage(messageId) {
+                    if (!confirm('Supprimer ce message ?')) return;
+                    
+                    fetch('{{ path('delete', {'id': 'MESSAGE_ID'}) }}'.replace('MESSAGE_ID', messageId), {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            const messageElement = document.querySelector(`[data-id="${messageId}"]`);
+                            if (messageElement) {
+                                messageElement.style.animation = 'fadeOut 0.3s forwards';
+                                setTimeout(() => messageElement.remove(), 300);
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                },
+                startUpdateChecker() {
+                    this.checkForUpdates();
+                    this.state.updateTimer = setInterval(() => this.checkForUpdates(), this.state.updateInterval);
+                },
+                checkForUpdates() {
+                    fetch(`{{ path('updates') }}?lastId=${this.state.lastId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.messages && data.messages.length > 0) {
+                                this.renderMessages(data.messages);
+                                this.state.lastId = data.lastId;
+                                
+                                if (this.state.isNearBottom) {
+                                    this.scrollToBottom();
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Update error:', error);
+                            // Backoff strategy
+                            clearInterval(this.state.updateTimer);
+                            this.state.updateInterval = Math.min(this.state.updateInterval * 2, 30000);
+                            this.state.updateTimer = setInterval(() => this.checkForUpdates(), this.state.updateInterval);
+                        });
+                },
+                renderMessages(messages) {
+                    messages.forEach(message => {
+                        if (document.querySelector(`[data-id="${message.id}"]`)) return;
+                        
+                        const isCurrentUser = message.author.id === this.state.currentUser;
+                        const messageElement = document.createElement('div');
+                        messageElement.className = `message ${isCurrentUser ? 'current-user' : ''}`;
+                        messageElement.dataset.id = message.id;
+                        messageElement.dataset.authorName = message.author.prenom;
+                        
+                        let replyHtml = '';
+                        if (message.replyTo) {
+                            replyHtml = `
+                                <div class="reply-container" data-reply-id="${message.replyTo.id}">
+                                    <span class="reply-author">${message.replyTo.author.prenom}</span>
+                                    ${message.replyTo.content.length > 30 ? 
+                                        message.replyTo.content.substring(0, 30) + '...' : 
+                                        message.replyTo.content}
+                                </div>
+                            `;
+                        }
+                        
+                        const actionsHtml = `
+                            <div class="message-actions">
+                                <button class="action-btn reply-btn" data-action="reply" data-message-id="${message.id}" title="Répondre">
+                                    <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
+                                </button>
+                                ${isCurrentUser ? `
+                                <button class="action-btn edit-btn" data-action="edit" data-message-id="${message.id}" title="Modifier">
+                                    <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                                </button>
+                                <button class="action-btn delete-btn" data-action="delete" data-message-id="${message.id}" title="Supprimer">
+                                    <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"/></svg>
+                                </button>
+                                ` : ''}
+                            </div>
+                        `;
+                        
+                        messageElement.innerHTML = `
+                            <div class="user-avatar" style="background-image: ${message.author.avatarUrl ? 'url('+message.author.avatarUrl+')' : 'none'};">
+                                ${message.author.avatarUrl ? '' : message.author.prenom.substring(0, 1).toUpperCase()}
+                            </div>
+                            <div class="message-content">
+                                ${replyHtml}
+                                <div class="message-header">
+                                    <span class="user-name">${message.author.prenom}</span>
+                                    <span class="message-time">${new Date(message.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                                </div>
+                                <div class="message-text">${message.content}</div>
+                            </div>
+                            ${actionsHtml}
+                        `;
+                        
+                        this.elements.messages.appendChild(messageElement);
+                    });
+                },
+                scrollToBottom() {
+                    setTimeout(() => {
+                        this.elements.messages.scrollTop = this.elements.messages.scrollHeight;
+                    }, 100);
+                },
+                focusMessage(messageId) {
+                    const message = document.querySelector(`[data-id="${messageId}"]`);
+                    if (message) {
+                        message.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        message.classList.add('highlight');
+                        setTimeout(() => message.classList.remove('highlight'), 1500);
+                    }
+                }
+            };
+            
+            // Ajout de l'animation de fadeOut pour la suppression
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeOut {
+                    from { opacity: 1; transform: translateY(0); }
+                    to { opacity: 0; transform: translateY(20px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            window.focusMessage = (messageId) => chat.focusMessage(messageId);
+            
+            chat.init();
+            
+            // Auto-scroll and focus on load
+            chat.scrollToBottom();
+            document.getElementById('message-input').focus();
+        });
+    </script>
+</body>
+</html>

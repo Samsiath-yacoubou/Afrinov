@@ -1,0 +1,5223 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap");
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
+/* 1. Theme default css */
+@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap");
+/* line 5, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+body {
+  font-family: "Muli", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.img {
+  max-width: 100%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 16, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+a,
+.button {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 20, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+a:focus,
+.button:focus, button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 25, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+a:focus {
+  text-decoration: none;
+}
+
+/* line 28, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+/* line 34, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+a,
+button {
+  color: #1F1F1F;
+  outline: medium none;
+}
+
+/* line 39, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto", sans-serif;
+  color: #1F1F1F;
+}
+
+/* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+/* line 52, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 56, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+li {
+  list-style: none;
+}
+
+/* line 59, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #727272;
+  margin-bottom: 13px;
+  font-family: "Muli", sans-serif;
+}
+
+/* line 68, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+label {
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* line 74, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+*::-moz-selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 79, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 84, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+::selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 89, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+*::-webkit-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 94, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+*:-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 99, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+*::-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 104, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+*::placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 110, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 114, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.mb-70 {
+  margin-bottom: 73px;
+}
+
+@media (max-width: 767px) {
+  /* line 114, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+  .mb-70 {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 121, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 125, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 128, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 133, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 136, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 139, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 144, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.overlay {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 148, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.overlay::before {
+  position: absolute;
+  content: "";
+  background-color: #1F1F1F;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: .8;
+}
+
+/* line 160, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 164, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 176, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 180, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 193, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 197, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 213, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* line 217, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* button style */
+/* line 223, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.owl-carousel .owl-nav div {
+  background: transparent;
+  height: 40px;
+  left: 0px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  width: 40px;
+  color: #FFFFFF;
+  background-color: transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  left: 50px;
+  font-size: 15px;
+  line-height: 40px;
+  border: 1px solid #8E8B8B;
+  left: 150px;
+}
+
+/* line 250, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.owl-carousel .owl-nav div.owl-next {
+  left: auto;
+  right: 150px;
+}
+
+/* line 255, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.owl-carousel .owl-nav div.owl-next i {
+  position: relative;
+  right: 0;
+}
+
+/* line 262, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.owl-carousel .owl-nav div.owl-prev i {
+  position: relative;
+  top: 0px;
+}
+
+/* line 272, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.owl-carousel:hover .owl-nav div {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 275, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.owl-carousel:hover .owl-nav div:hover {
+  color: #fff;
+  background: #615CFD;
+  border: 1px solid transparent;
+}
+
+/* line 285, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 289, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 292, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+
+/* line 295, ../../Arafath/CL/December/233. Startup/HTML/scss/theme-default.scss */
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+.boxed-btn {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 44px;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #615CFD;
+  text-align: center;
+  color: #615CFD !important;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* line 16, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+.boxed-btn:hover {
+  background: #615CFD;
+  color: #fff !important;
+  border: 1px solid #615CFD;
+}
+
+/* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+.boxed-btn:focus {
+  outline: none;
+}
+
+/* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 28, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+.boxed-btn3 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0181f5+0,5db2ff+100 */
+  background: #615CFD;
+  color: #fff;
+  display: inline-block;
+  padding: 12px 33px;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  border: 1px solid transparent;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  text-align: center;
+  color: #fff !important;
+  text-transform: capitalize;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* line 45, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+.boxed-btn3:hover {
+  border: 1px solid #615CFD;
+  color: #615CFD !important;
+  background: transparent;
+}
+
+/* line 50, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+.boxed-btn3:focus {
+  outline: none;
+}
+
+/* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 76, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 81, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 84, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 89, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 106, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 111, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 114, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 117, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 122, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 138, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 143, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 146, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 150, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 162, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 166, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 170, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 178, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 187, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 190, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 194, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 202, ../../Arafath/CL/December/233. Startup/HTML/scss/_btn.scss */
+
+/* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.section_title span {
+  position: relative;
+  z-index: 3;
+  font-size: 14px;
+  font-weight: 500;
+  color: #615CFD;
+  text-transform: capitalize;
+  margin-bottom: 19px;
+  display: block;
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.section_title h3 {
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 400;
+  color: #1F1F1F;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 31, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+  .section_title h3 br {
+    display: none;
+  }
+}
+
+/* line 37, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.section_title p {
+  font-size: 16px;
+  color: #727272;
+  line-height: 28px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  /* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+  .section_title p br {
+    display: none;
+  }
+}
+
+/* line 51, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.section_title.white_text h3 {
+  color: #fff;
+}
+
+/* line 54, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.section_title.white_text span {
+  color: #fff;
+  padding-top: 0;
+}
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.section_title.white_text span:before {
+  display: none;
+}
+
+/* line 63, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+
+@media (max-width: 767px) {
+  /* line 63, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+}
+
+/* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+.mb-90 {
+  margin-bottom: 90px;
+}
+
+@media (max-width: 767px) {
+  /* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_section_title.scss */
+  .mb-90 {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+  .mobile_menu {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    z-index: 9;
+  }
+}
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+/* line 28, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+/* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+@media (max-width: 767px) {
+  /* line 35, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 35, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+}
+
+/* line 44, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+/* line 55, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+@media (max-width: 767px) {
+  /* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+}
+
+/* line 72, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+/* line 78, ../../Arafath/CL/December/233. Startup/HTML/scss/_slick-nav.scss */
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area {
+    padding-top: 0;
+  }
+}
+
+/* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area {
+  padding: 0 200px;
+}
+
+@media (max-width: 767px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 10px 10px;
+    background: #8a2be2;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 10px 10px;
+    background: #8a2be2;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 0 70px;
+  }
+}
+
+/* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .logo-img {
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  /* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+/* line 44, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu {
+  text-align: center;
+}
+
+/* line 47, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li {
+  display: inline-block;
+  position: relative;
+  margin: 0 23px;
+}
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a {
+  color: #47035b;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  padding: 40px 0;
+  font-family: "Muli", sans-serif;
+  position: relative;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a {
+    font-size: 15px;
+  }
+}
+
+/* line 75, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a i {
+  font-size: 9px;
+}
+
+@media (max-width: 767px) {
+  /* line 75, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a i {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 75, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a i {
+    display: none !important;
+  }
+}
+
+/* line 85, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a.active::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* line 90, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a:hover {
+  color: #8a2be2;
+}
+
+/* line 94, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu {
+  position: absolute;
+  left: 0;
+  top: 140%;
+  background: #8a2be2;
+  width: 200px;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(151, 35, 214, 0.02);
+  opacity: 0;
+  visibility: hidden;
+  text-align: left;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
+}
+
+/* line 106, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li {
+  display: block;
+  margin: 0;
+}
+
+/* line 109, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li a {
+  padding: 10px 15px;
+  position: inherit;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  display: block;
+  color: #8a2be2;
+}
+
+/* line 115, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li a::before {
+  display: none;
+}
+
+/* line 119, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li:hover a {
+  color: #b426dc;
+}
+
+/* line 124, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+/* line 129, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li:hover > a::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* line 133, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li:first-child a {
+  padding-left: 0;
+}
+
+/* line 139, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area.sticky {
+  box-shadow: #E6E6FA;
+  position: fixed;
+  width: 100%;
+  top: -70px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(70px);
+  transition: transform 500ms ease, background 500ms ease;
+  -webkit-transition: transform 500ms ease, background 500ms ease;
+  box-shadow: #c73f1a;
+  background: #090909;
+}
+
+/* line 165, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area.sticky .main-menu {
+  padding: 0;
+}
+
+/* line 169, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area.sticky .main-menu ul li a {
+  color: #fff;
+}
+
+/* line 176, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .main-header-area.sticky .log_chat_area .say_hi {
+  color: #58166bf9;
+}
+
+/* line 184, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .log_chat_area {
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+}
+
+/* line 186, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .log_chat_area .say_hi {
+  font-size: 16px;
+  color: #5b0b71;
+  font-weight: 600;
+  position: relative;
+  z-index: 0;
+  padding: 0 0 12px 0;
+  margin-right: 0px;
+  font-family: "Muli", sans-serif;
+}
+
+/* line 195, ../../Arafath/CL/December/233. Startup/HTML/scss/_header.scss */
+.header-area .log_chat_area .say_hi:before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  background: #f1a952;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_bg_1 {
+  background-image: url(../img/banner/banner.png);
+}
+
+/* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_bg_2 {
+  background-image: url(../img/banner/banner2.png);
+}
+
+/* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_area .single_slider {
+  position: relative;
+  z-index: 0;
+  height: 900px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media (max-width: 767px) {
+  /* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider {
+    height: 500px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider {
+    height: 620px;
+  }
+}
+
+/* line 23, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_area .single_slider.about_banner.overlay::before {
+  opacity: .5;
+}
+
+/* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_area .single_slider .slider_text h3 {
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 78px;
+  font-weight: 400;
+  line-height: 84px;
+  margin-bottom: 54px;
+}
+
+/* line 34, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_area .single_slider .slider_text h3 span {
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  /* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_text h3 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_text h3 {
+    font-size: 50px;
+    line-height: 62px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_text h3 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
+
+/* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_area .single_slider .slider_text span {
+  font-size: 30px;
+  font-weight: 400;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 59, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+.slider_area .single_slider .slider_text span::before {
+  position: absolute;
+  background: #fff;
+  width: 50px;
+  height: 2px;
+  content: '';
+  left: -67px;
+  top: 50%;
+  margin-bottom: -1px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_text span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_text span {
+    font-size: 16px;
+  }
+}
+
+/* line 76, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+
+@media (max-width: 767px) {
+  /* line 76, ../../Arafath/CL/December/233. Startup/HTML/scss/_slider.scss */
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+/* line 15, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+/* line 19, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 19, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (max-width: 767px) {
+  /* line 25, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (max-width: 767px) {
+  /* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 54, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 62, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (max-width: 767px) {
+  /* line 110, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 110, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 110, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 122, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 128, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 134, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 134, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 139, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+/* line 148, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+/* line 160, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+/* line 168, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 168, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 177, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 177, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 177, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 192, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 192, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 192, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 200, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+
+@media (max-width: 767px) {
+  /* line 200, ../../Arafath/CL/December/233. Startup/HTML/scss/_features.scss */
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+}
+
+/* line 8, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+/* line 15, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+@media (max-width: 767px) {
+  /* line 15, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+}
+
+/* line 22, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+/* line 29, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+/* line 35, ../../Arafath/CL/December/233. Startup/HTML/scss/_counter.scss */
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+.about_area {
+  background: #1F1F1F;
+  position: relative;
+}
+
+/* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+.about_area::before {
+  content: '';
+  background-image: url(../img/about/about.png);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 9;
+  background-size: cover;
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (max-width: 767px) {
+  /* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area::before {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area::before {
+    display: none;
+  }
+}
+
+/* line 23, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+
+/* line 29, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+
+/* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+.about_area .about_info {
+  padding: 160px 0;
+}
+
+@media (max-width: 767px) {
+  /* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area .about_info {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area .about_info {
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area .about_info {
+    padding: 100px 0;
+  }
+}
+
+/* line 46, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+.about_area .section_title h3 {
+  margin-top: 25px;
+  margin-bottom: 54px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 46, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area .section_title h3 {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 46, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+  .about_area .section_title h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+}
+
+/* line 58, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+.about_area .section_title .mid_text {
+  color: #C9C9C9;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+/* line 64, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
+.about_area .section_title .last_text {
+  color: #C9C9C9;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 44px;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+/* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 15, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 20, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 41, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 49, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 54, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 59, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 64, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+@media (max-width: 767px) {
+  /* line 64, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 64, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+/* line 76, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 81, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 86, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+@media (max-width: 767px) {
+  /* line 86, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+/* line 98, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 103, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+/* line 112, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+@media (max-width: 767px) {
+  /* line 112, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+/* line 118, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+
+@media (max-width: 767px) {
+  /* line 118, ../../Arafath/CL/December/233. Startup/HTML/scss/_gallery.scss */
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 6, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .footer_top {
+  padding-top: 100px;
+  padding-bottom: 160px;
+  background: #0d0d0d  ;
+}
+
+@media (max-width: 767px) {
+  /* line 6, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 6, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 6, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 22, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top .menu_links {
+    margin-top: 15px;
+  }
+}
+
+/* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .footer_top .menu_links ul li {
+  display: inline-block;
+  margin-right: 46px;
+}
+
+@media (max-width: 767px) {
+  /* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top .menu_links ul li {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top .menu_links ul li {
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .footer_top .menu_links ul li {
+    margin-right: 30px;
+  }
+}
+
+/* line 39, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .footer_top .menu_links ul li a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .footer_top .menu_links ul li a:hover {
+  color: #615CFD;
+}
+
+/* line 51, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .copy-right_text {
+  padding-bottom: 25px;
+  background:  #10100f;
+}
+
+/* line 54, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .copy-right_text .footer_border {
+  padding-bottom: 25px;
+  border-top: 1px solid #c692f7;
+}
+
+/* line 58, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .copy-right_text .copy_right {
+  font-size: 15px;
+  color: #C9C9C9;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  /* line 58, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .copy-right_text .copy_right {
+    font-size: 13px;
+  }
+}
+
+/* line 66, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .copy-right_text .copy_right a {
+  color: #b12af0;
+}
+
+/* line 71, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .socail_links {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  /* line 71, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .socail_links {
+    text-align: left;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 71, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+  .footer .socail_links {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+/* line 85, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .socail_links ul li {
+  display: inline-block;
+}
+
+/* line 88, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .socail_links ul li a {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  line-height: 40px !important;
+  margin-right: 7px;
+  color: #E7F9F9;
+  line-height: 40px !important;
+  border: 1px solid #E7F9F9;
+  font-size: 14px;
+}
+
+/* line 102, ../../Arafath/CL/December/233. Startup/HTML/scss/_footer.scss */
+.footer .socail_links ul li a:hover {
+  color: #fff !important;
+  background: #615CFD;
+  border: 1px solid #615CFD;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_bg_1 {
+  background-image: url(../img/banner/bradcam.png);
+}
+
+/* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.breadcam_bg_2 {
+  background-image: url(../img/banner/bradcam_2.png);
+}
+
+/* line 7, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.breadcam_bg_3 {
+  background-image: url(../img/banner/bradcam_3.png);
+}
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_area {
+  background-size: cover;
+  background-position: bottom;
+  padding: 214px 0 92px 0;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+/* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_area::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #1F1F1F;
+  opacity: .5;
+  z-index: -1;
+  content: '';
+}
+
+@media (max-width: 767px) {
+  /* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+  .bradcam_area {
+    padding: 140px 0 90px 0;
+  }
+}
+
+/* line 35, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_area h3 {
+  font-size: 78px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 767px) {
+  /* line 35, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+  .bradcam_area h3 {
+    font-size: 30px;
+  }
+}
+
+/* line 46, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_area p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+/* line 51, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_area p a {
+  color: #fff;
+}
+
+/* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.bradcam_area p a:hover {
+  color: #fff;
+}
+
+/* line 60, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 67, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 71, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 75, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 83, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 87, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 94, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 98, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 102, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 113, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 117, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 121, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 155, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 170, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 179, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 185, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 193, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 198, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+
+/* line 203, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #000000;
+  opacity: .7;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 5, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 19, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 23, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 28, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 40, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 50, ../../Arafath/CL/December/233. Startup/HTML/scss/_department.scss */
+
+/* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area {
+  padding: 160px 0;
+  background-image: url(../img/testmonial/banner.png);
+  position: relative;
+  z-index: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  content: '';
+  background: #1F1F1F;
+  opacity: .6;
+}
+
+@media (max-width: 767px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+  .testimonial_area {
+    padding: 50px 0;
+  }
+}
+
+/* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .single_testmonial p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 35px 0 25px 0;
+}
+
+@media (min-width: 320px) and (max-width: 1500px) {
+  /* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+  .testimonial_area .single_testmonial p br {
+    display: none;
+  }
+}
+
+/* line 38, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author .thumb {
+  width: 42px;
+  height: 42px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: auto;
+  margin: auto auto 12px auto;
+}
+
+/* line 45, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  font-family: "Roboto", sans-serif;
+  color: #FFFFFF;
+}
+
+/* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 61, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .owl-carousel .owl-item img {
+  display: inline-block;
+  width: auto;
+}
+
+/* line 65, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .owl-carousel .owl-nav div.owl-next {
+  left: auto;
+  right: 0;
+}
+
+/* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_tesmonial.scss */
+.testimonial_area .owl-carousel .owl-nav div {
+  left: 0;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_discuss.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_discuss.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_discuss.scss */
+}
+
+/* line 11, ../../Arafath/CL/December/233. Startup/HTML/scss/_discuss.scss */
+
+@media (max-width: 767px) {
+  /* line 11, ../../Arafath/CL/December/233. Startup/HTML/scss/_discuss.scss */
+}
+
+/* line 19, ../../Arafath/CL/December/233. Startup/HTML/scss/_discuss.scss */
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+.service_area {
+  padding-top: 155px;
+  padding-bottom: 130px;
+}
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+  .service_area {
+    padding-bottom: 40px;
+    padding-top: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+  .service_area {
+    padding-bottom: 50px;
+  }
+}
+
+/* line 11, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+.service_area .single_service {
+  padding: 48px 35px 45px 35px;
+  border: 2px solid #E8E8E8;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  margin-bottom: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 11, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+  .service_area .single_service {
+    padding: 30px 20px;
+  }
+}
+
+/* line 23, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+.service_area .single_service h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1F1F1F;
+  margin-top: 29px;
+  margin-bottom: 13px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 23, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+  .service_area .single_service h3 {
+    font-size: 22px;
+  }
+}
+
+/* line 33, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+.service_area .single_service p {
+  color: #727272;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+/* line 40, ../../Arafath/CL/December/233. Startup/HTML/scss/_service.scss */
+.service_area .single_service:hover {
+  border: 2px solid #615CFD;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+}
+
+/* line 8, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+
+/* line 11, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+
+/* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+
+@media (max-width: 767px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+}
+
+/* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+
+@media (max-width: 767px) {
+  /* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+}
+
+/* line 42, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+
+@media (max-width: 767px) {
+  /* line 42, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  /* line 51, ../../Arafath/CL/December/233. Startup/HTML/scss/_video.scss */
+}
+
+/* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area {
+  padding-top: 147px;
+  padding-bottom: 130px;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+  .portfolio_image_area {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+}
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+
+@media (max-width: 767px) {
+  /* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+}
+
+/* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 29, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_thumb {
+  height: 350px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  /* line 29, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+  .portfolio_image_area .single_Portfolio .portfolio_thumb {
+    height: auto;
+  }
+}
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_thumb img {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 42, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #fff;
+  border: 0;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 56, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_hover .title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 64, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_hover span {
+  font-size: 14px;
+  color: #615CFD;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 70, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_hover h3 {
+  color: #1F1F1F;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 11px;
+  margin-bottom: 25px;
+}
+
+/* line 78, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio .portfolio_hover .boxed-btn3:hover {
+  border: 1px solid #615CFD !important;
+  color: #615CFD !important;
+  background: #fff !important;
+}
+
+/* line 85, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .single_Portfolio:hover .portfolio_hover {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* line 90, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+
+/* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio.scss */
+.portfolio_image_area .popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+}
+
+/* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+@media (max-width: 767px) {
+  /* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+}
+
+/* line 22, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 26, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 37, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 51, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 55, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 60, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 67, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 89, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 94, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 101, ../../Arafath/CL/December/233. Startup/HTML/scss/_experts.scss */
+
+/* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+@media (max-width: 767px) {
+  /* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+}
+
+/* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+/* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+}
+
+/* line 22, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+/* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+/* line 39, ../../Arafath/CL/December/233. Startup/HTML/scss/_emergency_contact.scss */
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+}
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+@media (max-width: 767px) {
+  /* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+}
+
+/* line 25, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 29, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 37, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 44, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 46, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 50, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 52, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 60, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 65, ../../Arafath/CL/December/233. Startup/HTML/scss/_prising.scss */
+
+/* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area {
+  padding-top: 155px;
+  padding-bottom: 122px;
+}
+
+@media (max-width: 767px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+  .team_area {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+  .team_area {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+}
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+
+/* line 16, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team {
+  margin-bottom: 30px;
+}
+
+/* line 18, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 22, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb img {
+  width: 100%;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+/* line 26, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb .team_hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  -webkit-transform: translateY(10%);
+  -moz-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb .team_hover .hover_inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+}
+
+/* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb .team_hover .hover_inner ul li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+/* line 46, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb .team_hover .hover_inner ul li a {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  line-height: 37px !important;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #615CFD;
+  display: inline-block;
+  background: #615CFD;
+}
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_thumb .team_hover .hover_inner ul li a:hover {
+  background: #615CFD;
+  border: 1px solid #615CFD;
+  color: #fff;
+}
+
+/* line 68, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_title {
+  padding-top: 28px;
+}
+
+/* line 70, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_title h3 {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: #1F1F1F;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+/* line 77, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team .team_title p {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: #707070;
+  font-family: "Muli", sans-serif;
+}
+
+/* line 86, ../../Arafath/CL/December/233. Startup/HTML/scss/_team.scss */
+.team_area .single_team:hover .team_hover {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+.get_in_tauch_area {
+  padding-top: 146px;
+  padding-bottom: 160px;
+}
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+  .get_in_tauch_area {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+.get_in_tauch_area .touch_form .single_input input, .get_in_tauch_area .touch_form .single_input textarea {
+  width: 100%;
+  border: 1px solid #C9C9C9;
+  height: 50px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  padding: 20px 16px;
+  margin-bottom: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+}
+
+/* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+.get_in_tauch_area .touch_form .single_input input::placeholder, .get_in_tauch_area .touch_form .single_input textarea::placeholder {
+  color: #707070;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+/* line 27, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+.get_in_tauch_area .touch_form .single_input input:focus, .get_in_tauch_area .touch_form .single_input textarea:focus {
+  outline: none;
+}
+
+/* line 31, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+.get_in_tauch_area .touch_form .single_input textarea {
+  height: 148px;
+  resize: none;
+}
+
+/* line 37, ../../Arafath/CL/December/233. Startup/HTML/scss/_getIn_tauch.scss */
+.get_in_tauch_area .touch_form .submit_btn .boxed-btn3 {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area {
+  position: relative;
+}
+
+/* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area.extra_margin_bottom {
+  margin-bottom: 160px;
+}
+
+@media (max-width: 767px) {
+  /* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area.extra_margin_bottom {
+    margin-bottom: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area.extra_margin_bottom {
+    margin-bottom: 100px;
+  }
+}
+
+/* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area.extra_margin {
+  margin-top: 160px;
+}
+
+@media (max-width: 767px) {
+  /* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area.extra_margin {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 12, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area.extra_margin {
+    margin-top: 100px;
+  }
+}
+
+/* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area::before {
+  position: absolute;
+  content: '';
+  width: 50%;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-image: url(../img/work/work.png);
+  background-size: cover;
+  background-position: center center;
+  -webkit-border-radius: 20px 0 0 20px;
+  -moz-border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px;
+}
+
+@media (max-width: 767px) {
+  /* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area::before {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area::before {
+    display: none;
+  }
+}
+
+/* line 39, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area .work_info {
+  padding: 180px 0;
+}
+
+@media (max-width: 767px) {
+  /* line 39, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area .work_info {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 39, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+  .how_we_work_area .work_info {
+    padding: 100px 0;
+  }
+}
+
+/* line 48, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area .work_info .section_title .mid_text {
+  font-size: 18px;
+  font-family: "Muli", sans-serif;
+  color: #1F1F1F;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* line 55, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area .work_info .section_title .last_p {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+/* line 61, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area .work_info .video_watch {
+  margin-top: 37px;
+}
+
+/* line 64, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area .work_info .video_watch .play_btn a {
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #615CFD;
+  font-size: 14px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  display: inline-block;
+}
+
+/* line 76, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
+.how_we_work_area .work_info .video_watch span {
+  font-size: 20px;
+  color: #1F1F1F;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_mission.scss */
+.our_mission_area {
+  padding-top: 150px;
+  padding-bottom: 137px;
+}
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_mission.scss */
+  .our_mission_area {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_mission.scss */
+  .our_mission_area {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+}
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_mission.scss */
+.our_mission_area .mission_text h4 {
+  font-size: 24px;
+  color: #615CFD;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 21, ../../Arafath/CL/December/233. Startup/HTML/scss/_mission.scss */
+.our_mission_area .mision_info .single_mission {
+  margin-bottom: 15px;
+}
+
+/* line 23, ../../Arafath/CL/December/233. Startup/HTML/scss/_mission.scss */
+.our_mission_area .mision_info .single_mission p {
+  color: #707070;
+  font-size: 16px;
+}
+
+/* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner {
+  background: #1F1F1F;
+  padding-top: 220px;
+  padding-bottom: 470px;
+}
+
+@media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_banner {
+    padding: 100px 0;
+  }
+}
+
+/* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner .details_info h3 {
+  font-size: 78px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 62px;
+}
+
+@media (max-width: 767px) {
+  /* line 9, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_banner .details_info h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 20, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_banner .details_info .details_links {
+    display: block !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 25, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_banner .details_info .details_links .single_details {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 29, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner .details_info .details_links .single_details span {
+  color: #C9C9C9;
+  font-size: 12px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 9px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 37, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner .details_info .details_links .single_details h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* line 45, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner .details_info .details_links .single_details .social_links ul li {
+  display: inline-block;
+  margin-right: 21px;
+}
+
+@media (max-width: 767px) {
+  /* line 45, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_banner .details_info .details_links .single_details .social_links ul li {
+    margin: 0 5px;
+  }
+}
+
+/* line 51, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner .details_info .details_links .single_details .social_links ul li a {
+  color: #fff;
+  font-size: 16px;
+}
+
+/* line 55, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_banner .details_info .details_links .single_details .social_links ul li a:hover {
+  color: #615CFD;
+}
+
+/* line 67, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_wrap {
+  padding-bottom: 130px;
+  position: relative;
+  margin-top: -380px;
+}
+
+@media (max-width: 767px) {
+  /* line 67, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_wrap {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 67, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_wrap {
+    margin-top: 60px;
+  }
+}
+
+/* line 78, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_wrap .banner img {
+  width: 100%;
+}
+
+/* line 82, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_wrap .details_text {
+  margin-bottom: 70px;
+  margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+  /* line 82, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+  .portfolio_details_wrap .details_text {
+    margin: 30px 0;
+  }
+}
+
+/* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_wrap .thumbs .single_thumb {
+  margin-bottom: 30px;
+}
+
+/* line 95, ../../Arafath/CL/December/233. Startup/HTML/scss/_portfolio_details.scss */
+.portfolio_details_wrap .thumbs .single_thumb img {
+  width: 100%;
+}
+
+/*=================== contact banner start ====================*/
+/* line 3, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-info {
+  margin-bottom: 25px;
+}
+
+/* line 13, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-info__icon {
+  margin-right: 20px;
+}
+
+/* line 16, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-info__icon i, .contact-info__icon span {
+  color: #8f9195;
+  font-size: 27px;
+}
+
+/* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-info .media-body h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #2a2a2a;
+}
+
+/* line 30, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-info .media-body h3 a:hover {
+  color: #ff5e13;
+}
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-info .media-body p {
+  color: #8a8a8a;
+}
+
+/*=================== contact banner end ====================*/
+/*=================== contact form start ====================*/
+/* line 45, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-title {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* line 53, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.form-contact label {
+  font-size: 14px;
+}
+
+/* line 57, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.form-contact .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 61, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.form-contact .form-control {
+  border: 1px solid #e5e6e9;
+  border-radius: 0px;
+  height: 48px;
+  padding-left: 18px;
+  font-size: 13px;
+  background: transparent;
+}
+
+/* line 69, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.form-contact .form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 74, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.form-contact .form-control::placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+/* line 80, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.form-contact textarea {
+  border-radius: 0px;
+  height: 100% !important;
+}
+
+/*=================== contact form end ====================*/
+/* Contact Success and error Area css
+============================================================================================ */
+/* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 106, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 112, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 121, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 126, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 133, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+.contact-section {
+  padding: 130px 0 100px;
+}
+
+@media (max-width: 991px) {
+  /* line 133, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+  .contact-section {
+    padding: 70px 0 40px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 133, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+  .contact-section {
+    padding: 80px 0 50px;
+  }
+}
+
+/* line 141, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 146, ../../Arafath/CL/December/233. Startup/HTML/scss/_contact.scss */
+
+/* line 75, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.sample-text-area {
+  background: #fff;
+  padding: 100px 0 70px 0;
+}
+
+/* line 80, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.text-heading {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* line 85, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+b,
+sup,
+sub,
+u,
+del {
+  color: #ff5e13;
+}
+
+/* line 93, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h1 {
+  font-size: 36px;
+}
+
+/* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 101, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 105, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h4 {
+  font-size: 18px;
+}
+
+/* line 109, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h5 {
+  font-size: 16px;
+}
+
+/* line 113, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h6 {
+  font-size: 14px;
+}
+
+/* line 117, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+}
+
+/* line 127, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
+  color: #828bb2;
+}
+
+/* line 137, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.button-area {
+  background: #fff;
+}
+
+/* line 138, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.button-area .border-top-generic {
+  padding: 70px 15px;
+  border-top: 1px dotted #eee;
+}
+
+/* line 146, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.button-group-area .genric-btn {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* line 149, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.button-group-area .genric-btn:last-child {
+  margin-right: 0;
+}
+
+/* line 155, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn {
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+/* line 166, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn:focus {
+  outline: none;
+}
+
+/* line 169, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.e-large {
+  padding: 0 40px;
+  line-height: 50px;
+}
+
+/* line 173, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.large {
+  line-height: 45px;
+}
+
+/* line 176, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.medium {
+  line-height: 30px;
+}
+
+/* line 179, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.small {
+  line-height: 25px;
+}
+
+/* line 182, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.radius {
+  border-radius: 3px;
+}
+
+/* line 185, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.circle {
+  border-radius: 20px;
+}
+
+/* line 188, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.arrow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* line 195, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.arrow span {
+  margin-left: 10px;
+}
+
+/* line 199, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+}
+
+/* line 203, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.default:hover {
+  border: 1px solid #f9f9ff;
+  background: #fff;
+}
+
+/* line 208, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.default-border {
+  border: 1px solid #f9f9ff;
+  background: #fff;
+}
+
+/* line 211, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.default-border:hover {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+}
+
+/* line 217, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.primary {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+/* line 221, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.primary:hover {
+  color: #ff5e13;
+  border: 1px solid #ff5e13;
+  background: #fff;
+}
+
+/* line 227, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.primary-border {
+  color: #ff5e13;
+  border: 1px solid #ff5e13;
+  background: #fff;
+}
+
+/* line 231, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.primary-border:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+/* line 237, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.success {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+/* line 241, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.success:hover {
+  color: #4cd3e3;
+  border: 1px solid #4cd3e3;
+  background: #fff;
+}
+
+/* line 247, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.success-border {
+  color: #4cd3e3;
+  border: 1px solid #4cd3e3;
+  background: #fff;
+}
+
+/* line 251, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.success-border:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+/* line 257, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.info {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+/* line 261, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.info:hover {
+  color: #38a4ff;
+  border: 1px solid #38a4ff;
+  background: #fff;
+}
+
+/* line 267, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.info-border {
+  color: #38a4ff;
+  border: 1px solid #38a4ff;
+  background: #fff;
+}
+
+/* line 271, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.info-border:hover {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+/* line 277, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.warning {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+}
+
+/* line 281, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.warning:hover {
+  color: #f4e700;
+  border: 1px solid #f4e700;
+  background: #fff;
+}
+
+/* line 287, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.warning-border {
+  color: #f4e700;
+  border: 1px solid #f4e700;
+  background: #fff;
+}
+
+/* line 291, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.warning-border:hover {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+}
+
+/* line 297, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.danger {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+}
+
+/* line 301, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.danger:hover {
+  color: #f44a40;
+  border: 1px solid #f44a40;
+  background: #fff;
+}
+
+/* line 307, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.danger-border {
+  color: #f44a40;
+  border: 1px solid #f44a40;
+  background: #fff;
+}
+
+/* line 311, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.danger-border:hover {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+}
+
+/* line 317, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.link {
+  color: #415094;
+  background: #f9f9ff;
+  text-decoration: underline;
+  border: 1px solid transparent;
+}
+
+/* line 322, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.link:hover {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+}
+
+/* line 328, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.link-border {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  text-decoration: underline;
+}
+
+/* line 333, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.link-border:hover {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+}
+
+/* line 339, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.genric-btn.disable {
+  color: #222222, 0.3;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+}
+
+/* line 347, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.generic-blockquote {
+  padding: 30px 50px 30px 30px;
+  background: #f9f9ff;
+  border-left: 2px solid #ff5e13;
+}
+
+/* line 353, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table-wrap {
+  overflow-x: scroll;
+}
+
+/* line 357, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table {
+  background: #f9f9ff;
+  padding: 15px 0px 30px 0px;
+  min-width: 800px;
+}
+
+/* line 361, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .serial {
+  width: 11.83%;
+  padding-left: 30px;
+}
+
+/* line 365, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .country {
+  width: 28.07%;
+}
+
+/* line 368, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .visit {
+  width: 19.74%;
+}
+
+/* line 371, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .percentage {
+  width: 40.36%;
+  padding-right: 50px;
+}
+
+/* line 375, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-head {
+  display: flex;
+}
+
+/* line 377, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-head .serial,
+.progress-table .table-head .country,
+.progress-table .table-head .visit,
+.progress-table .table-head .percentage {
+  color: #415094;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* line 387, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row {
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  display: flex;
+}
+
+/* line 391, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .serial,
+.progress-table .table-row .country,
+.progress-table .table-row .visit,
+.progress-table .table-row .percentage {
+  display: flex;
+  align-items: center;
+}
+
+/* line 399, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .country img {
+  margin-right: 15px;
+}
+
+/* line 404, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress {
+  width: 80%;
+  border-radius: 0px;
+  background: transparent;
+}
+
+/* line 408, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar {
+  height: 5px;
+  line-height: 5px;
+}
+
+/* line 411, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-1 {
+  background-color: #6382e6;
+}
+
+/* line 414, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-2 {
+  background-color: #e66686;
+}
+
+/* line 417, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-3 {
+  background-color: #f09359;
+}
+
+/* line 420, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-4 {
+  background-color: #73fbaf;
+}
+
+/* line 423, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-5 {
+  background-color: #73fbaf;
+}
+
+/* line 426, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-6 {
+  background-color: #6382e6;
+}
+
+/* line 429, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-7 {
+  background-color: #a367e7;
+}
+
+/* line 432, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.progress-table .table-row .percentage .progress .progress-bar.color-8 {
+  background-color: #e66686;
+}
+
+/* line 441, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-gallery-image {
+  margin-top: 30px;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  height: 200px;
+}
+
+/* line 449, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+
+/* line 455, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.unordered-list li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.82em !important;
+}
+
+/* line 459, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.unordered-list li:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #ff5e13;
+  background: #fff;
+  top: 4px;
+  left: 0;
+  border-radius: 50%;
+}
+
+/* line 473, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list {
+  margin-left: 30px;
+}
+
+/* line 475, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list li {
+  list-style-type: decimal-leading-zero;
+  color: #ff5e13;
+  font-weight: 500;
+  line-height: 1.82em !important;
+}
+
+/* line 480, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list li span {
+  font-weight: 300;
+  color: #828bb2;
+}
+
+/* line 488, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list-alpha li {
+  margin-left: 30px;
+  list-style-type: lower-alpha;
+  color: #ff5e13;
+  font-weight: 500;
+  line-height: 1.82em !important;
+}
+
+/* line 494, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list-alpha li span {
+  font-weight: 300;
+  color: #828bb2;
+}
+
+/* line 502, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list-roman li {
+  margin-left: 30px;
+  list-style-type: lower-roman;
+  color: #ff5e13;
+  font-weight: 500;
+  line-height: 1.82em !important;
+}
+
+/* line 508, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.ordered-list-roman li span {
+  font-weight: 300;
+  color: #828bb2;
+}
+
+/* line 515, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input {
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  border: none;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0 20px;
+}
+
+/* line 523, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input:focus {
+  outline: none;
+}
+
+/* line 528, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.input-group-icon {
+  position: relative;
+}
+
+/* line 530, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.input-group-icon .icon {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  line-height: 40px;
+  z-index: 3;
+}
+
+/* line 535, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.input-group-icon .icon i {
+  color: #797979;
+}
+
+/* line 540, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.input-group-icon .single-input {
+  padding-left: 45px;
+}
+
+/* line 545, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-textarea {
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  border: none;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0 20px;
+  height: 100px;
+  resize: none;
+}
+
+/* line 555, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-textarea:focus {
+  outline: none;
+}
+
+/* line 560, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input-primary {
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  border: 1px solid transparent;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0 20px;
+}
+
+/* line 568, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input-primary:focus {
+  outline: none;
+  border: 1px solid #ff5e13;
+}
+
+/* line 574, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input-accent {
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  border: 1px solid transparent;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0 20px;
+}
+
+/* line 582, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input-accent:focus {
+  outline: none;
+  border: 1px solid #eb6b55;
+}
+
+/* line 588, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input-secondary {
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  border: 1px solid transparent;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0 20px;
+}
+
+/* line 596, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.single-input-secondary:focus {
+  outline: none;
+  border: 1px solid #f09359;
+}
+
+/* line 602, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-switch {
+  width: 35px;
+  height: 17px;
+  border-radius: 8.5px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 609, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-switch input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* line 619, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-switch input + label {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff5e13;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* line 632, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-switch input:checked + label {
+  left: 19px;
+}
+
+/* line 639, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch {
+  width: 35px;
+  height: 17px;
+  border-radius: 8.5px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 646, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 655, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 663, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch input + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 8.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* line 677, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch input + label:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* line 693, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch input:checked + label:after {
+  left: 19px;
+}
+
+/* line 696, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-switch input:checked + label:before {
+  background: #ff5e13;
+}
+
+/* line 704, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch {
+  width: 35px;
+  height: 17px;
+  border-radius: 8.5px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 711, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 720, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 728, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch input + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 8.5px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+/* line 742, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch input + label:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* line 758, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch input:checked + label:after {
+  left: 19px;
+}
+
+/* line 761, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-switch input:checked + label:before {
+  background: #4cd3e3;
+}
+
+/* line 769, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 776, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 785, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-checkbox input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 798, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-checkbox input:checked + label {
+  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+  border: none;
+}
+
+/* line 806, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 813, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 822, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-checkbox input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 835, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-checkbox input:checked + label {
+  background: url(../img/elements/success-check.png) no-repeat center center/cover;
+  border: none;
+}
+
+/* line 843, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 850, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 859, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-checkbox input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 871, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-checkbox input:disabled {
+  cursor: not-allowed;
+  z-index: 3;
+}
+
+/* line 876, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-checkbox input:checked + label {
+  background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
+  border: none;
+}
+
+/* line 884, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 891, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-radio input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 900, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-radio input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 913, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.primary-radio input:checked + label {
+  background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
+  border: none;
+}
+
+/* line 921, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 928, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-radio input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 937, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-radio input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 950, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.confirm-radio input:checked + label {
+  background: url(../img/elements/success-radio.png) no-repeat center center/cover;
+  border: none;
+}
+
+/* line 958, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 965, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-radio input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 974, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-radio input + label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 986, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-radio input:disabled {
+  cursor: not-allowed;
+  z-index: 3;
+}
+
+/* line 991, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.disabled-radio input:checked + label {
+  background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
+  border: none;
+}
+
+/* line 999, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select {
+  height: 40px;
+}
+
+/* line 1001, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .nice-select {
+  border: none;
+  border-radius: 0px;
+  height: 40px;
+  background: #f9f9ff;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+/* line 1008, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .nice-select .list {
+  margin-top: 0;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  width: 100%;
+  padding: 10px 0 10px 0px;
+}
+
+/* line 1015, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .nice-select .list .option {
+  font-weight: 300;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  line-height: 28px;
+  min-height: 28px;
+  font-size: 12px;
+  padding-left: 20px;
+}
+
+/* line 1022, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .nice-select .list .option.selected {
+  color: #ff5e13;
+  background: transparent;
+}
+
+/* line 1026, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .nice-select .list .option:hover {
+  color: #ff5e13;
+  background: transparent;
+}
+
+/* line 1033, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .current {
+  margin-right: 50px;
+  font-weight: 300;
+}
+
+/* line 1037, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.default-select .nice-select::after {
+  right: 20px;
+}
+
+/* line 1042, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select {
+  height: 40px;
+  width: 100%;
+}
+
+/* line 1045, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .nice-select {
+  border: none;
+  border-radius: 0px;
+  height: 40px;
+  background: #f9f9ff;
+  padding-left: 45px;
+  padding-right: 40px;
+  width: 100%;
+}
+
+/* line 1053, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .nice-select .list {
+  margin-top: 0;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  width: 100%;
+  padding: 10px 0 10px 0px;
+}
+
+/* line 1060, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .nice-select .list .option {
+  font-weight: 300;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  line-height: 28px;
+  min-height: 28px;
+  font-size: 12px;
+  padding-left: 45px;
+}
+
+/* line 1067, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .nice-select .list .option.selected {
+  color: #ff5e13;
+  background: transparent;
+}
+
+/* line 1071, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .nice-select .list .option:hover {
+  color: #ff5e13;
+  background: transparent;
+}
+
+/* line 1078, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .current {
+  margin-right: 50px;
+  font-weight: 300;
+}
+
+/* line 1082, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.form-select .nice-select::after {
+  right: 20px;
+}
+
+/* line 1086, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.mt-10 {
+  margin-top: 10px;
+}
+
+/* line 1089, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.section-top-border {
+  padding: 50px 0;
+  border-top: 1px dotted #eee;
+}
+
+/* line 1093, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+/* line 1096, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.mt-30 {
+  margin-top: 30px;
+}
+
+/* line 1099, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
+.switch-wrap {
+  margin-bottom: 10px;
+}
+
+/* Start Blog Area css
+============================================================================================ */
+/* line 5, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 10, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_area a {
+  color: #666666 !important;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 14, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_area a:hover, .blog_area a :hover {
+  background: -webkit-linear-gradient(131deg, #615CFD 0%, #615CFD 99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* line 28, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog:hover {
+  box-shadow: 0px 10px 20px 0px rgba(42, 34, 123, 0.1);
+}
+
+/* line 32, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog .thumb {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 36, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog .thumb:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 49, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog h4 {
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 34px;
+  margin-bottom: 25px;
+}
+
+/* line 56, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog a {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* line 66, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog .date {
+  color: #666666;
+  text-align: left;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* line 74, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog .tag {
+  text-align: left;
+  display: inline-block;
+  float: left;
+  font-size: 13px;
+  font-weight: 300;
+  margin-right: 22px;
+  position: relative;
+}
+
+/* line 84, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog .tag:after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background: #acacac;
+  right: -12px;
+  top: 7px;
+}
+
+@media (max-width: 1199px) {
+  /* line 74, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-blog .tag {
+    margin-right: 8px;
+  }
+  /* line 98, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-blog .tag:after {
+    display: none;
+  }
+}
+
+/* line 104, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+@media (max-width: 800px) {
+  /* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-blog {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 112, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 116, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 121, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+@media (max-width: 1199px) {
+  /* line 112, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+}
+
+/* line 135, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-blog:hover .thumb:after {
+  opacity: .7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 1199px) {
+  /* line 143, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-blog h4 {
+    transition: all 300ms linear 0s;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 14px;
+    margin-bottom: 12px;
+  }
+  /* line 149, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-blog h4 a {
+    font-size: 18px;
+  }
+}
+
+/* line 157, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 160, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+@media (min-width: 992px) {
+  /* line 160, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+}
+
+/* line 179, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 185, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 195, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 200, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* End Blog Area css
+============================================================================================ */
+/* Latest Blog Area css
+============================================================================================ */
+/* line 224, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 228, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 234, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 247, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* End Latest Blog Area css
+============================================================================================ */
+/* Causes Area css
+============================================================================================ */
+/* line 263, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 267, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 274, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 285, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 288, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 291, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 299, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 307, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 320, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 323, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 336, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 346, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 358, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* End Causes Area css
+============================================================================================ */
+/*================= latest_blog_area css =============*/
+/* line 374, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 378, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 381, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 384, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 389, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 392, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 403, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 410, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 417, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 431, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/*========= blog_categorie_area css ===========*/
+/* line 438, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+@media (min-width: 900px) {
+  /* line 438, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+}
+
+@media (min-width: 1100px) {
+  /* line 438, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+}
+
+/* line 454, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 459, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 463, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 476, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 494, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 501, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 510, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/*============ blog_left_sidebar css ==============*/
+/* line 525, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_item {
+  margin-bottom: 50px;
+}
+
+/* line 529, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_details {
+  padding: 30px 0 20px 10px;
+  box-shadow: 0px 10px 20px 0px rgba(221, 221, 221, 0.3);
+}
+
+@media (min-width: 768px) {
+  /* line 529, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .blog_details {
+    padding: 60px 30px 35px 35px;
+  }
+}
+
+/* line 537, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_details p {
+  margin-bottom: 30px;
+}
+
+/* line 541, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_details a {
+  color: #ff8b23;
+}
+
+/* line 544, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_details a:hover {
+  color: #615CFD;
+}
+
+/* line 549, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_details h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  /* line 549, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .blog_details h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
+
+/* line 563, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-info-link li {
+  float: left;
+  font-size: 14px;
+}
+
+/* line 567, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-info-link li a {
+  color: #999999;
+}
+
+/* line 571, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-info-link li i,
+.blog-info-link li span {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+/* line 577, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-info-link li::after {
+  content: "|";
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 583, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-info-link li:last-child::after {
+  display: none;
+}
+
+/* line 588, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-info-link::after {
+  content: "";
+  display: block;
+  clear: both;
+  display: table;
+}
+
+/* line 596, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_item_img {
+  position: relative;
+}
+
+/* line 599, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_item_img .blog_item_date {
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+  display: block;
+  color: #fff;
+  background-color: #615CFD;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  /* line 599, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .blog_item_img .blog_item_date {
+    bottom: -20px;
+    left: 40px;
+    padding: 13px 30px;
+  }
+}
+
+/* line 615, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_item_img .blog_item_date h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  /* line 615, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .blog_item_img .blog_item_date h3 {
+    font-size: 30px;
+  }
+}
+
+/* line 627, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_item_img .blog_item_date p {
+  font-size: 18px;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  /* line 627, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .blog_item_img .blog_item_date p {
+    font-size: 18px;
+  }
+}
+
+/* line 647, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .widget_title {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* line 652, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .widget_title::after {
+  content: "";
+  display: block;
+  padding-top: 15px;
+  border-bottom: 1px solid #f0e9ff;
+}
+
+/* line 660, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .single_sidebar_widget {
+  background: #fbf9ff;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 664, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .single_sidebar_widget .btn_1 {
+  margin-top: 0px;
+}
+
+/* line 672, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .search_widget .form-control {
+  height: 50px;
+  border-color: #f0e9ff;
+  font-size: 13px;
+  color: #999999;
+  padding-left: 20px;
+  border-radius: 0;
+  border-right: 0;
+}
+
+/* line 681, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .search_widget .form-control::placeholder {
+  color: #999999;
+}
+
+/* line 685, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .search_widget .form-control:focus {
+  border-color: #f0e9ff;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 694, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .search_widget .input-group button {
+  background: #fff;
+  border-left: 0;
+  border: 1px solid #f0e9ff;
+  padding: 4px 15px;
+  border-left: 0;
+}
+
+/* line 701, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .search_widget .input-group button i,
+.blog_right_sidebar .search_widget .input-group button span {
+  font-size: 14px;
+  color: #999999;
+}
+
+/* line 713, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .newsletter_widget .form-control {
+  height: 50px;
+  border-color: #f0e9ff;
+  font-size: 13px;
+  color: #999999;
+  padding-left: 20px;
+  border-radius: 0;
+}
+
+/* line 722, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .newsletter_widget .form-control::placeholder {
+  color: #999999;
+}
+
+/* line 726, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .newsletter_widget .form-control:focus {
+  border-color: #f0e9ff;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 735, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .newsletter_widget .input-group button {
+  background: #fff;
+  border-left: 0;
+  border: 1px solid #f0e9ff;
+  padding: 4px 15px;
+  border-left: 0;
+}
+
+/* line 742, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .newsletter_widget .input-group button i,
+.blog_right_sidebar .newsletter_widget .input-group button span {
+  font-size: 14px;
+  color: #999999;
+}
+
+/* line 755, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .post_category_widget .cat-list li {
+  border-bottom: 1px solid #f0e9ff;
+  transition: all 0.3s ease 0s;
+  padding-bottom: 12px;
+}
+
+/* line 760, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .post_category_widget .cat-list li:last-child {
+  border-bottom: 0;
+}
+
+/* line 764, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .post_category_widget .cat-list li a {
+  font-size: 14px;
+  line-height: 20px;
+  color: #888888;
+}
+
+/* line 769, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .post_category_widget .cat-list li a p {
+  margin-bottom: 0px;
+}
+
+/* line 774, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .post_category_widget .cat-list li + li {
+  padding-top: 15px;
+}
+
+/* line 791, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .popular_post_widget .post_item .media-body {
+  justify-content: center;
+  align-self: center;
+  padding-left: 20px;
+}
+
+/* line 796, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .popular_post_widget .post_item .media-body h3 {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 6px;
+  transition: all 0.3s linear;
+}
+
+/* line 807, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .popular_post_widget .post_item .media-body a:hover {
+  color: #fff;
+}
+
+/* line 813, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .popular_post_widget .post_item .media-body p {
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 0px;
+}
+
+/* line 820, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .popular_post_widget .post_item + .post_item {
+  margin-top: 20px;
+}
+
+/* line 828, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .tag_cloud_widget ul li {
+  display: inline-block;
+}
+
+/* line 831, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .tag_cloud_widget ul li a {
+  display: inline-block;
+  border: 1px solid #eeeeee;
+  background: #fff;
+  padding: 4px 20px;
+  margin-bottom: 8px;
+  margin-right: 3px;
+  transition: all 0.3s ease 0s;
+  color: #888888;
+  font-size: 13px;
+}
+
+/* line 842, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .tag_cloud_widget ul li a:hover {
+  background: #615CFD;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 857, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .instagram_feeds .instagram_row {
+  display: flex;
+  margin-right: -6px;
+  margin-left: -6px;
+}
+
+/* line 863, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .instagram_feeds .instagram_row li {
+  width: 33.33%;
+  float: left;
+  padding-right: 6px;
+  padding-left: 6px;
+  margin-bottom: 15px;
+}
+
+/* line 963, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog_right_sidebar .br {
+  width: 100%;
+  height: 1px;
+  background: #eeeeee;
+  margin: 30px 0px;
+}
+
+/* line 984, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-pagination {
+  margin-top: 80px;
+}
+
+/* line 988, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-pagination .page-link {
+  font-size: 14px;
+  position: relative;
+  display: block;
+  padding: 0;
+  text-align: center;
+  margin-left: -1px;
+  line-height: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 0 !important;
+  color: #8a8a8a;
+  border: 1px solid #f0e9ff;
+  margin-right: 10px;
+}
+
+/* line 1005, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-pagination .page-link i,
+.blog-pagination .page-link span {
+  font-size: 13px;
+}
+
+/* line 1017, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-pagination .page-item.active .page-link {
+  background-color: #fbf9ff;
+  border-color: #f0e9ff;
+  color: #888888;
+}
+
+/* line 1024, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.blog-pagination .page-item:last-child .page-link {
+  margin-right: 0;
+}
+
+/*============ Start Blog Single Styles  =============*/
+/* line 1049, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog_details {
+  box-shadow: none;
+  padding: 0;
+}
+
+/* line 1054, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 1057, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 1061, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 1074, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog_details {
+  padding-top: 26px;
+}
+
+/* line 1077, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog_details p {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* line 1087, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .quote-wrapper {
+  background: rgba(130, 139, 178, 0.1);
+  padding: 15px;
+  line-height: 1.733;
+  color: #888888;
+  font-style: italic;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+  /* line 1087, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-post-area .quote-wrapper {
+    padding: 30px;
+  }
+}
+
+/* line 1101, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .quotes {
+  background: #fff;
+  padding: 15px 15px 15px 20px;
+  border-left: 2px solid;
+}
+
+@media (min-width: 768px) {
+  /* line 1101, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-post-area .quotes {
+    padding: 25px 25px 25px 30px;
+  }
+}
+
+/* line 1111, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .arrow {
+  position: absolute;
+}
+
+/* line 1114, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .arrow .lnr {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* line 1121, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+/* line 1126, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top {
+  padding-top: 15px;
+  border-top: 1px solid #f0e9ff;
+}
+
+/* line 1130, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top p {
+  margin-bottom: 0;
+}
+
+/* line 1134, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .like-info {
+  font-size: 14px;
+}
+
+/* line 1137, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .like-info i,
+.single-post-area .navigation-top .like-info span {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* line 1144, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .comment-count {
+  font-size: 14px;
+}
+
+/* line 1147, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .comment-count i,
+.single-post-area .navigation-top .comment-count span {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* line 1156, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .social-icons li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* line 1160, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .social-icons li:last-child {
+  margin: 0;
+}
+
+/* line 1164, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-top .social-icons li i,
+.single-post-area .navigation-top .social-icons li span {
+  font-size: 14px;
+  color: #999999;
+}
+
+/* line 1182, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog-author {
+  padding: 40px 30px;
+  background: #fbf9ff;
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  /* line 1182, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-post-area .blog-author {
+    padding: 20px 8px;
+  }
+}
+
+/* line 1191, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog-author img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+@media (max-width: 600px) {
+  /* line 1191, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-post-area .blog-author img {
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* line 1204, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog-author a {
+  display: inline-block;
+}
+
+/* line 1208, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog-author a:hover {
+  color: #615CFD;
+}
+
+/* line 1213, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog-author p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+/* line 1218, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .blog-author h4 {
+  font-size: 16px;
+}
+
+/* line 1225, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+  margin-top: 55px;
+}
+
+/* line 1230, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area p {
+  margin-bottom: 0px;
+}
+
+/* line 1234, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area h4 {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+/* line 1240, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-left {
+  text-align: left;
+}
+
+/* line 1243, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-left .thumb {
+  margin-right: 20px;
+  background: #000;
+}
+
+/* line 1247, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-left .thumb img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 1252, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-left .lnr {
+  margin-left: 20px;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 1259, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-left:hover .lnr {
+  opacity: 1;
+}
+
+/* line 1264, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-left:hover .thumb img {
+  opacity: .5;
+}
+
+@media (max-width: 767px) {
+  /* line 1240, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .single-post-area .navigation-area .nav-left {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 1275, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-right {
+  text-align: right;
+}
+
+/* line 1278, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-right .thumb {
+  margin-left: 20px;
+  background: #000;
+}
+
+/* line 1282, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-right .thumb img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 1287, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-right .lnr {
+  margin-right: 20px;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 1294, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-right:hover .lnr {
+  opacity: 1;
+}
+
+/* line 1299, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.single-post-area .navigation-area .nav-right:hover .thumb img {
+  opacity: .5;
+}
+
+@media (max-width: 991px) {
+  /* line 1307, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+}
+
+/* line 1314, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area {
+  background: transparent;
+  border-top: 1px solid #eee;
+  padding: 45px 0;
+  margin-top: 50px;
+}
+
+@media (max-width: 414px) {
+  /* line 1314, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .comments-area {
+    padding: 50px 8px;
+  }
+}
+
+/* line 1325, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area h4 {
+  margin-bottom: 35px;
+  font-size: 18px;
+}
+
+/* line 1332, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area h5 {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+/* line 1341, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .comment-list {
+  padding-bottom: 48px;
+}
+
+/* line 1344, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .comment-list:last-child {
+  padding-bottom: 0px;
+}
+
+/* line 1348, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+
+@media (max-width: 413px) {
+  /* line 1354, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .comments-area .comment-list .single-comment h5 {
+    font-size: 12px;
+  }
+  /* line 1358, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .comments-area .comment-list .single-comment .date {
+    font-size: 11px;
+  }
+  /* line 1362, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .comments-area .comment-list .single-comment .comment {
+    font-size: 10px;
+  }
+}
+
+/* line 1369, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .thumb {
+  margin-right: 20px;
+}
+
+/* line 1372, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .thumb img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+/* line 1378, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .date {
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+/* line 1385, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .comment {
+  margin-bottom: 10px;
+  color: #777777;
+  font-size: 15px;
+}
+
+/* line 1391, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comments-area .btn-reply {
+  background-color: transparent;
+  color: #888888;
+  padding: 5px 18px;
+  font-size: 14px;
+  display: block;
+  font-weight: 400;
+}
+
+/* line 1408, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form {
+  border-top: 1px solid #eee;
+  padding-top: 45px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* line 1416, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1420, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form h4 {
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* line 1428, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .name {
+  padding-left: 0px;
+}
+
+@media (max-width: 767px) {
+  /* line 1428, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .comment-form .name {
+    padding-right: 0px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* line 1437, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .email {
+  padding-right: 0px;
+}
+
+@media (max-width: 991px) {
+  /* line 1437, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+  .comment-form .email {
+    padding-left: 0px;
+  }
+}
+
+/* line 1445, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .form-control {
+  border: 1px solid #f0e9ff;
+  border-radius: 5px;
+  height: 48px;
+  padding-left: 18px;
+  font-size: 13px;
+  background: transparent;
+}
+
+/* line 1453, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 1458, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .form-control::placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+/* line 1463, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form .form-control::placeholder {
+  color: #777777;
+}
+
+/* line 1468, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form textarea {
+  padding-top: 18px;
+  border-radius: 12px;
+  height: 100% !important;
+}
+
+/* line 1474, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 13px;
+  color: #777;
+}
+
+/* line 1480, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 13px;
+  color: #777;
+}
+
+/* line 1486, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form :-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 13px;
+  color: #777;
+}
+
+/* line 1492, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog.scss */
+.comment-form :-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 13px;
+  color: #777;
+}
+
+/*============ End Blog Single Styles  =============*/
+/**************** blog part css start ****************/
+/* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+@media (max-width: 576px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 2, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+/* line 19, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+@media (max-width: 576px) {
+  /* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 24, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+/* line 40, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 43, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 48, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+@media (max-width: 576px) {
+  /* line 48, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 48, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 48, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+/* line 72, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 76, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 83, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 86, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+@media (max-width: 576px) {
+  /* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 97, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+/* line 119, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+@media (max-width: 576px) {
+  /* line 119, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 119, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 119, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 119, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+/* line 140, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/* line 150, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+@media (max-width: 576px) {
+  /* line 150, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 150, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 150, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 150, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+}
+
+/* line 166, ../../Arafath/CL/December/233. Startup/HTML/scss/_blog_part.scss */
+
+/*# sourceMappingURL=style.css.map */

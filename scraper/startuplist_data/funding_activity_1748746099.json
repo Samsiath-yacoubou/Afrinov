@@ -1,0 +1,28 @@
+{
+  "title": "Funding Activity",
+  "subtitle": "Monthly funding trends across African startups",
+  "time_period": "Last 6 months",
+  "metrics": [
+    {
+      "label": "This Month",
+      "value": "$0",
+      "description": "",
+      "trend": null
+    },
+    {
+      "label": "Total Funding",
+      "value": "$0",
+      "description": "In selected period",
+      "trend": null
+    },
+    {
+      "label": "Total Rounds",
+      "value": "0",
+      "description": "Active funding months",
+      "trend": null
+    }
+  ],
+  "chart_data": [],
+  "footer_stats": {},
+  "timestamp": "2025-06-01T03:47:19.478602"
+}

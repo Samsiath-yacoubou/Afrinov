@@ -1,0 +1,123 @@
+{# <nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+  <div class="logo d-flex justify-content-between">
+    <a href="index-2.html"><img src="assetss/img/logo.png" alt=""></a>
+    <div class="sidebar_close_icon d-lg-none">
+      <i class="ti-close"></i>
+    </div>
+  </div>
+  <ul id="sidebar_menu">
+    {% if  is_granted('ROLE_ADMIN')  %}
+    <li class="mm-active">
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="icon_menu">
+          <img src="assetss/img/menu-icon/dashboard.svg" alt="">
+        </div>
+        <span>Gestion des Users</span>
+      </a>
+      <ul>
+        <li><a class="active" href="index-2.html">Liste_Innovateurs</a></li>
+        
+        <li><a class="active" href="index-2.html">Liste_Collaborateurs</a></li>
+
+      </ul>
+    </li>
+      
+    {% endif %}
+    <li class="">
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="icon_menu">
+          <img src="assetss/img/menu-icon/2.svg" alt="">
+        </div>
+        <span>Gestion des Innovations</span>
+      </a>
+      <ul>
+        
+         <li><a class="active" href="{{ path('app_list') }}">Mes_Innovations</a></li>
+         {% if  is_granted('ROLE_ADMIN')  %}
+        <li><a class="active" href="index-2.html">Liste_Innovations</a></li>
+         {% endif %}
+      </ul>
+    </li>
+    {% if  is_granted('ROLE_ADMIN')  %}
+    <li class="">
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="icon_menu">
+          <img src="assetss/img/menu-icon/2.svg" alt="">
+        </div>
+        <span>Gestion des Collaborations</span>
+      </a>
+      <ul>
+
+        <li><a class="active" href="index-2.html">Liste_Collaborations</a></li>
+
+      </ul>
+    </li>
+     {% endif %}
+
+     {% if  is_granted('ROLE_ADMIN')  %}
+    <li class="">
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="icon_menu">
+          <img src="assetss/img/menu-icon/2.svg" alt="">
+        </div>
+        
+        <span>Gestion des Annonces</span>
+      </a>
+      <ul>
+
+        <li><a class="active" href="index-2.html">Liste_Annonces</a></li>
+
+      </ul>
+    </li>
+    {% endif %}
+    <li class="">
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="icon_menu">
+          <img src="assetss/img/menu-icon/2.svg" alt="">
+        </div>
+        <span>Espace de discussion</span>
+      </a>
+      <ul>
+
+        <li><a class="active" href="index-2.html">Liste_Annonces</a></li>
+
+      </ul>
+    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li class="">
+      <a class="has-arrow" href="#" aria-expanded="false">
+
+        <div class="icon_menu">
+          <img src="assetss/img/menu-icon/16.svg" alt="">
+        </div>
+        <span>Pages</span>
+      </a>
+      <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="resister.html">Register</a></li>
+        <li><a href="error_400.html">Error 404</a></li>
+        <li><a href="error_500.html">Error 500</a></li>
+        <li><a href="forgot_pass.html">Forgot Password</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav> #}

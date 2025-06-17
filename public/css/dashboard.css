@@ -1,0 +1,382 @@
+:root {
+    --primary: #8a63d2;
+    --primary-dark:#af8eec;
+    --primary-light: #F0EEFF;
+    --dark: #1A1A2E;
+    --light: #F8F9FF;
+    --gray: #E2E4F0;
+    --success: #00C9A7;
+    --content-padding: 5vw;
+    /* Nouveau : padding latéral responsive */
+}
+
+[data-bs-theme="dark"] {
+    --dark: #F8F9FF;
+    --light: #1A1A2E;
+    --gray: #2A2A3E;
+    --primary-light: rgba(123, 97, 255, 0.1);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header Rafraîchi */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem var(--content-padding);
+    background: var(--light);
+    border-bottom: 1px solid var(--gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 3rem;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.nav-pro {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-pro .nav-item {
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-pro .nav-item:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.nav-pro .nav-item.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(123, 97, 255, 0.25);
+}
+
+/* Espace utilisateur amélioré */
+.user-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    position: relative;
+}
+
+.notification-icon {
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.notification-icon:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.badge {
+    font-size: 0.65rem;
+    padding: 0.25em 0.45em;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-avatar:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(123, 97, 255, 0.2);
+}
+
+/* Dropdown Profil Premium */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    width: 240px;
+    padding: 0.75rem 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-header {
+    padding: 0.75rem 1.25rem 0.5rem;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--dark);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.925rem;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-light);
+    padding-left: 1.75rem;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary);
+}
+
+.dropdown-divider {
+    border-top: 1px solid var(--gray);
+    margin: 0.5rem 0;
+}
+
+/* Contenu principal repensé */
+.main-content {
+    padding: 2.5rem var(--content-padding);
+}
+
+/* Bannière de bienvenue élégante */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border-radius: 14px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
+}
+
+.welcome-banner::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    top: -80px;
+    right: -80px;
+}
+
+.welcome-banner::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    bottom: -60px;
+    left: -60px;
+}
+
+.welcome-banner h2 {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 2;
+    font-size: 1.8rem;
+}
+
+.welcome-banner p {
+    max-width: 600px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.welcome-banner .btn {
+    position: relative;
+    z-index: 2;
+    padding: 0.65rem 1.75rem;
+    font-weight: 500;
+    border-radius: 8px;
+    background: white;
+    color: var(--primary);
+    transition: all 0.3s;
+}
+
+.welcome-banner .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Cartes redessinées */
+.card-pro {
+    border: none;
+    border-radius: 14px;
+    background: var(--light);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 2rem;
+    border: 1px solid var(--gray);
+    overflow: hidden;
+}
+
+.card-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(123, 97, 255, 0.1);
+}
+
+.card-header {
+    background: var(--light) !important;
+    border-bottom: 1px solid var(--gray) !important;
+    padding: 1.5rem !important;
+}
+
+.stat-card {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    background: rgba(123, 97, 255, 0.03);
+}
+
+.stat-card i {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+}
+
+.stat-card .value {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0.75rem 0;
+    line-height: 1.2;
+}
+
+.stat-card .label {
+    color: var(--dark);
+    opacity: 0.7;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Dark Mode Toggle amélioré */
+.dark-mode-toggle {
+    width: 52px;
+    height: 28px;
+    background: var(--gray);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    transition: all 0.3s;
+    border: none;
+}
+
+.dark-mode-toggle::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .dark-mode-toggle {
+    background: var(--primary-dark);
+}
+
+[data-bs-theme="dark"] .dark-mode-toggle::before {
+    transform: translateX(24px);
+    background: var(--light);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    :root {
+        --content-padding: 3vw;
+    }
+
+    .dashboard-header {
+        flex-wrap: wrap;
+        padding-bottom: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .nav-pro {
+        order: 2;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-pro .nav-item {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --content-padding: 5vw;
+    }
+
+    .welcome-banner {
+        padding: 1.75rem;
+    }
+
+    .welcome-banner h2 {
+        font-size: 1.5rem;
+    }
+}

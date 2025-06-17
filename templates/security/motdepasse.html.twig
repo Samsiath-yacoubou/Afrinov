@@ -1,0 +1,126 @@
+{# templates/security/forgot_password.html.twig #}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mot de passe oublié</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-violet: #6a0dad;
+            --light-violet: #9c27b0;
+            --lighter-violet: #ba68c8;
+            --lightest-violet: #e1bee7;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+        }
+        
+        body {
+            background-color: var(--gray-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .auth-container {
+            max-width: 500px;
+            margin: 5rem auto;
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-violet);
+        }
+        
+        .auth-header h1 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-form .form-control {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        .auth-form .form-control:focus {
+            border-color: var(--lighter-violet);
+            box-shadow: 0 0 0 0.25rem rgba(156, 39, 176, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-violet);
+            border-color: var(--primary-violet);
+            padding: 10px 20px;
+            border-radius: 8px;
+            width: 100%;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-violet);
+            border-color: var(--light-violet);
+            transform: translateY(-2px);
+        }
+        
+        .alert {
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .alert-success {
+            background-color: #e8f5e9;
+            border-color: #c8e6c9;
+            color: #2e7d32;
+        }
+        
+        .alert-danger {
+            background-color: #ffebee;
+            border-color: #ffcdd2;
+            color: #c62828;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>Mot de passe oublié</h1>
+            <p class="text-muted">Entrez votre email pour réinitialiser votre mot de passe</p>
+        </div>
+
+        {% if app.flashes('success') %}
+            <div class="alert alert-success mb-4">
+                {{ app.flashes('success')|first }}
+            </div>
+        {% endif %}
+
+        {% if app.flashes('error') %}
+            <div class="alert alert-danger mb-4">
+                {{ app.flashes('error')|first }}
+            </div>
+        {% endif %}
+
+        <form method="POST" action="" class="auth-form">
+            <div class="mb-4">
+                <label for="email" class="form-label">Adresse e-mail</label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="Entrez votre adresse e-mail">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Réinitialiser le mot de passe</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

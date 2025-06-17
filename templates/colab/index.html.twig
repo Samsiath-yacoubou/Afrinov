@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Collaboration Africaine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6a0dad; /* Violet royal */
+            --secondary-color: #f3e5ff; /* Violet très clair */
+            --accent-color: #4b0082; /* Indigo */
+            --dark-accent: #301934; /* Violet foncé */
+            --light-bg: #faf5ff;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            color: #333;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.2);
+            padding: 2.5rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            border: 1px solid rgba(106, 13, 173, 0.1);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .form-header h1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .form-header h1:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+        
+        .form-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: var(--secondary-color);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .form-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 13, 173, 0.1);
+        }
+        
+        .form-section h2 {
+            font-size: 1.3rem;
+            color: var(--dark-accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-section h2 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-accent);
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: #e63946;
+        }
+        
+        /* Boutons */
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border: none;
+            padding: 0.8rem 2.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+            transition: all 0.4s;
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(106, 13, 173, 0.4);
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+        }
+        
+        /* Étapes du formulaire */
+        .form-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .form-steps:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .step.active .step-number {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .step.completed .step-number {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .step.active .step-label {
+            color: var(--dark-accent);
+            font-weight: 600;
+        }
+        
+        /* Animation entre les étapes */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* File upload */
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload-btn {
+            border: 2px dashed #b388ff;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(179, 136, 255, 0.05);
+        }
+        
+        .file-upload-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(106, 13, 173, 0.1);
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            
+            .form-steps {
+                flex-wrap: wrap;
+            }
+            
+            .step {
+                flex: 0 0 33%;
+                margin-bottom: 15px;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Pan-African touch */
+        .africa-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: linear-gradient(135deg, #ff9a00, #ff0d6e);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+            transform: rotate(15deg);
+        }
+        
+        .bg-purple {
+            background-color: var(--primary-color);
+        }
+        
+        .text-purple {
+            color: var(--primary-color);
+        }
+        
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        
+        .animate__headShake {
+            animation: headShake 1s ease;
+        }
+        
+        @keyframes headShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="form-container position-relative">
+            
+            <div class="form-header">
+                <h1><i class="fas fa-hands-helping me-2"></i>Collaboration Panafricaine</h1>
+                <p>Rejoignez le mouvement de collaboration qui unit les talents africains à travers le continent</p>
+            </div>
+            
+            <!-- Étapes du formulaire -->
+            <div class="form-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Informations</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Collaboration</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Projet</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+            
+            {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate', 'id': 'multiStepForm', 'enctype': 'multipart/form-data'}}) }}
+            
+            <!-- Étape 1 - Informations Personnelles -->
+            <div class="form-step active" id="step1">
+                <div class="form-section">
+                    <h2><i class="fas fa-user-tie"></i>Vos Informations</h2>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Nom & Prénom</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-user"></i></span>
+                                {{ form_widget(form.nomprenom, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Nom & Prénom',
+                                    'required': 'required'
+                                }}) }}
+                                <div class="invalid-feedback">Veuillez entrer votre nom et prénom.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Fonction</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-briefcase"></i></span>
+                                {{ form_widget(form.fonction, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Votre fonction',
+                                    'required': 'required'
+                                }}) }}
+                                <div class="invalid-feedback">Veuillez entrer votre fonction.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Entreprise</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-building"></i></span>
+                                {{ form_widget(form.nomentreprise, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Entreprise',
+                                    'required': 'required'
+                                }}) }}
+                                <div class="invalid-feedback">Veuillez entrer le nom de votre entreprise.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label">Site web</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-globe"></i></span>
+                                {{ form_widget(form.site, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Site web (optionnel)'
+                                }}) }}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Email</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-envelope"></i></span>
+                                {{ form_widget(form.email, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Email professionnel',
+                                    'required': 'required'
+                                }}) }}
+                                <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Téléphone</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-phone-alt"></i></span>
+                                {{ form_widget(form.tel, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Téléphone',
+                                    'required': 'required'
+                                }}) }}
+                                <div class="invalid-feedback">Veuillez entrer un numéro de téléphone.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label">LinkedIn</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fab fa-linkedin"></i></span>
+                                {{ form_widget(form.linkedin, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Profil LinkedIn (optionnel)'
+                                }}) }}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Pays</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-purple text-white"><i class="fas fa-flag"></i></span>
+                                {{ form_widget(form.pays, {'attr': {
+                                    'class': 'form-select',
+                                    'required': 'required'
+                                }}) }}
+                                <div class="invalid-feedback">Veuillez sélectionner un pays.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <div></div> <!-- Espaceur -->
+                    <button type="button" class="btn btn-primary-custom next-step" data-next="2">
+                        Suivant <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Étape 2 - Détails de la Collaboration -->
+            <div class="form-step" id="step2">
+                <div class="form-section">
+                    <h2><i class="fas fa-handshake"></i>Détails de la Collaboration</h2>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Type de talent recherché</label>
+                            {{ form_widget(form.typetalent, {'attr': {
+                                'class': 'form-select',
+                                'required': 'required'
+                            }}) }}
+                            <div class="invalid-feedback">Veuillez sélectionner un type de talent.</div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label">Secteur d'activité</label>
+                            {{ form_widget(form.secteur, {'attr': {
+                                'class': 'form-select'
+                            }}) }}
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Type de collaboration</label>
+                            {{ form_widget(form.typecolab, {'attr': {
+                                'class': 'form-select',
+                                'required': 'required'
+                            }}) }}
+                            <div class="invalid-feedback">Veuillez sélectionner un type de collaboration.</div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Durée estimée</label>
+                            {{ form_widget(form.durecolab, {'attr': {
+                                'class': 'form-select',
+                                'required': 'required'
+                            }}) }}
+                            <div class="invalid-feedback">Veuillez sélectionner une durée estimée.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-outline-secondary prev-step" data-prev="1">
+                        <i class="fas fa-arrow-left me-2"></i> Précédent
+                    </button>
+                    <button type="button" class="btn btn-primary-custom next-step" data-next="3">
+                        Suivant <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Étape 3 - Détails du Projet -->
+            <div class="form-step" id="step3">
+                <div class="form-section">
+                    <h2><i class="fas fa-lightbulb"></i>Votre Projet</h2>
+                    
+                    <div class="mb-4">
+                        <label class="form-label required-field">Description du projet</label>
+                        {{ form_widget(form.message, {'attr': {
+                            'class': 'form-control',
+                            'rows': 6,
+                            'placeholder': 'Décrivez votre projet en détail...',
+                            'required': 'required'
+                        }}) }}
+                        <div class="invalid-feedback">Veuillez décrire votre projet.</div>
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">Documents complémentaires</label>
+                        <div class="file-upload">
+                            <label class="file-upload-btn">
+                                <i class="fas fa-cloud-upload-alt fa-2x mb-2 text-purple"></i><br>
+                                <span id="file-name">Glissez-déposez vos fichiers ou cliquez pour sélectionner</span>
+                                {{ form_widget(form.ficher, {'attr': {
+                                    'class': 'file-upload-input'
+                                }}) }}
+                            </label>
+                        </div>
+                        <small class="text-muted">Formats acceptés: PDF, DOC, JPEG, PNG (max 10MB)</small>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-outline-secondary prev-step" data-prev="2">
+                        <i class="fas fa-arrow-left me-2"></i> Précédent
+                    </button>
+                    <button type="button" class="btn btn-primary-custom next-step" data-next="4">
+                        Suivant <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Étape 4 - Confirmation -->
+            <div class="form-step" id="step4">
+                <div class="form-section text-center">
+                    <h2><i class="fas fa-check-circle text-success"></i> Confirmation</h2>
+                    
+                    <div class="mb-4">
+                        <i class="fas fa-envelope-open-text fa-4x text-purple mb-3"></i>
+                        <h3 class="mb-3">Vérifiez vos informations</h3>
+                        <p class="mb-4">Merci de vérifier que toutes les informations saisies sont correctes avant de soumettre votre demande de collaboration.</p>
+                        
+                        <div class="form-check mb-4">
+                            {{ form_widget(form.politique, {'attr': {
+                                'class': 'form-check-input',
+                                'required': 'required'
+                            }}) }}
+                            <label class="form-check-label" for="{{ form.politique.vars.id }}">
+                                J'accepte que mes informations soient utilisées dans le cadre de cette collaboration.
+                            </label>
+                            <div class="invalid-feedback">Vous devez accepter les conditions.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-outline-secondary prev-step" data-prev="3">
+                        <i class="fas fa-arrow-left me-2"></i> Précédent
+                    </button>
+                    <button type="submit" class="btn btn-primary-custom" id="submitBtn">
+                        <i class="fas fa-paper-plane me-2"></i> Soumettre la demande
+                    </button>
+                </div>
+            </div>
+            
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestion des étapes
+            const steps = document.querySelectorAll('.step');
+            const formSteps = document.querySelectorAll('.form-step');
+            
+            // Fonction pour passer à l'étape suivante
+            function goToStep(stepNumber) {
+                // Masquer toutes les étapes
+                formSteps.forEach(step => {
+                    step.classList.remove('active');
+                });
+                
+                // Afficher l'étape courante
+                document.getElementById(`step${stepNumber}`).classList.add('active');
+                
+                // Mettre à jour la navigation des étapes
+                steps.forEach(step => {
+                    step.classList.remove('active', 'completed');
+                    const currentStep = parseInt(step.getAttribute('data-step'));
+                    
+                    if (currentStep < stepNumber) {
+                        step.classList.add('completed');
+                    } else if (currentStep === stepNumber) {
+                        step.classList.add('active');
+                    }
+                });
+            }
+            
+            // Gestion des clics sur "Suivant"
+            document.querySelectorAll('.next-step').forEach(button => {
+                button.addEventListener('click', function() {
+                    const currentStep = this.closest('.form-step');
+                    const currentStepId = parseInt(currentStep.id.replace('step', ''));
+                    const nextStepId = parseInt(this.getAttribute('data-next'));
+                    
+                    // Valider l'étape actuelle avant de passer à la suivante
+                    if (validateStep(currentStepId)) {
+                        goToStep(nextStepId);
+                    }
+                });
+            });
+            
+            // Gestion des clics sur "Précédent"
+            document.querySelectorAll('.prev-step').forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevStepId = parseInt(this.getAttribute('data-prev'));
+                    goToStep(prevStepId);
+                });
+            });
+            
+            // Fonction de validation d'une étape
+            function validateStep(stepId) {
+                let isValid = true;
+                const currentStep = document.getElementById(`step${stepId}`);
+                
+                // Valider tous les champs requis de l'étape
+                const requiredFields = currentStep.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('is-invalid');
+                    }
+                    
+                    // Validation spécifique pour l'email
+                    if (field.type === 'email' && field.value.trim() && !isValidEmail(field.value)) {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                });
+                
+                // Si invalide, animer les champs problématiques
+                if (!isValid) {
+                    const invalidFields = currentStep.querySelectorAll('.is-invalid');
+                    invalidFields.forEach(field => {
+                        field.classList.add('animate__headShake');
+                        setTimeout(() => {
+                            field.classList.remove('animate__headShake');
+                        }, 1000);
+                    });
+                    
+                    // Faire défiler jusqu'au premier champ invalide
+                    const firstInvalid = currentStep.querySelector('.is-invalid');
+                    if (firstInvalid) {
+                        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+                
+                return isValid;
+            }
+            
+            // Validation d'email
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+            
+            // Affichage du nom du fichier
+            const fileInput = document.querySelector('.file-upload-input');
+            if (fileInput) {
+                fileInput.addEventListener('change', function(e) {
+                    const fileName = e.target.files[0] 
+                        ? e.target.files[0].name 
+                        : 'Glissez-déposez vos fichiers ou cliquez pour sélectionner';
+                    document.getElementById('file-name').textContent = fileName;
+                });
+            }
+            
+            // Gestion de la soumission du formulaire
+            const form = document.getElementById('multiStepForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Valider toutes les étapes avant soumission
+                    let allValid = true;
+                    
+                    for (let i = 1; i <= 4; i++) {
+                        if (!validateStep(i)) {
+                            allValid = false;
+                            // Aller à la première étape avec erreur
+                            if (allValid === false) {
+                                goToStep(i);
+                                break;
+                            }
+                        }
+                    }
+                    
+                    if (!allValid) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    
+                    // Animation de soumission
+                    const submitBtn = document.getElementById('submitBtn');
+                    if (submitBtn) {
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Envoi en cours...';
+                        submitBtn.disabled = true;
+                    }
+                    
+                    return true;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

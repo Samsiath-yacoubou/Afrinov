@@ -1,0 +1,44 @@
+[
+  {
+    "title": null,
+    "subtitle": null,
+    "value": null,
+    "trend": {
+      "direction": null,
+      "value": null
+    },
+    "badge": null,
+    "graph_values": [],
+    "sectors": [],
+    "insight": null,
+    "timestamp": "2025-06-01T13:07:19.752440"
+  },
+  {
+    "title": null,
+    "subtitle": null,
+    "value": null,
+    "trend": {
+      "direction": null,
+      "value": null
+    },
+    "badge": null,
+    "graph_values": [],
+    "sectors": [],
+    "insight": null,
+    "timestamp": "2025-06-01T13:07:24.785229"
+  },
+  {
+    "title": "Active Investors",
+    "subtitle": "Currently investing",
+    "value": "594",
+    "trend": {
+      "direction": "up",
+      "value": "+35.3%"
+    },
+    "badge": "0 new this month",
+    "graph_values": [],
+    "sectors": [],
+    "insight": null,
+    "timestamp": "2025-06-01T13:07:29.806059"
+  }
+]

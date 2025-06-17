@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enregistrement d'Innovation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <style>
+        :root {
+            --primary: #8a63d2;
+            --primary-light: #F0EDFF;
+            --secondary: #8a63d2;
+            --dark:rgb(90, 90, 206);
+            --gray-dark: #64748B;
+            --gray-medium: #CBD5E0;
+            --gray-light: #F8FAFC;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFF;
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(109, 74, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 196, 179, 0.05) 0%, transparent 20%);
+        }
+
+        .innovation-form-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .form-decoration {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decoration-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(circle at 20% 30%, var(--white) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, var(--white) 0%, transparent 20%);
+        }
+
+        .decoration-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 320px;
+        }
+
+        .decoration-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .decoration-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .decoration-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .decoration-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .decoration-features {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            margin-right: 0.75rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .form-content {
+            padding: 3rem;
+        }
+
+        .form-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .form-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .form-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-subtitle {
+            font-size: 1rem;
+            color: var(--gray-dark);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .input-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.1);
+        }
+
+        .input-wrapper.with-prefix {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-prefix {
+            padding: 0 0.5rem 0 1rem;
+            font-size: 0.9375rem;
+            color: var(--gray-dark);
+            background: var(--gray-light);
+            border: 1px solid var(--gray-medium);
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper.with-prefix .input-field {
+            border-radius: 0 10px 10px 0;
+            flex: 1;
+        }
+
+        .select-field {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            appearance: none;
+            background: var(--white) url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat;
+            background-position: right 1rem center;
+            transition: all 0.3s ease;
+        }
+
+        .select-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.1);
+        }
+
+        .textarea-wrapper {
+            position: relative;
+        }
+
+        .textarea-field {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            min-height: 150px;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .textarea-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.1);
+        }
+
+        .textarea-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .formatting-tools {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .format-btn {
+            background: var(--gray-light);
+            border: none;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--gray-dark);
+        }
+
+        .format-btn:hover {
+            background: var(--gray-medium);
+            color: var(--dark);
+        }
+
+        .char-count {
+            font-size: 0.75rem;
+            color: var(--gray-dark);
+        }
+
+        .char-count.warning {
+            color: var(--error);
+        }
+
+        .upload-wrapper {
+            position: relative;
+        }
+
+        .upload-input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .upload-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border: 2px dashed var(--gray-medium);
+            border-radius: 10px;
+            background: var(--gray-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .upload-area.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .upload-icon {
+            margin-bottom: 1rem;
+        }
+
+        .upload-text p {
+            font-size: 0.9375rem;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .upload-text span {
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+        }
+
+        .browse-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0;
+            text-decoration: underline;
+        }
+
+        .file-info {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--gray-medium);
+            border-radius: 8px;
+        }
+
+        .file-name {
+            font-size: 0.875rem;
+            color: var(--dark);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        .clear-file {
+            background: none;
+            border: none;
+            color: var(--gray-dark);
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0 0 0 1rem;
+            transition: color 0.2s;
+        }
+
+        .clear-file:hover {
+            color: var(--error);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background:rgb(176, 161, 234);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(109, 74, 255, 0.2);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .cancel-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.875rem 1.75rem;
+            background: var(--white);
+            color: var(--gray-dark);
+            border: 1px solid var(--gray-medium);
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cancel-btn:hover {
+            border-color: var(--gray-dark);
+            background: var(--gray-light);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-content > * {
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .form-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .form-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .form-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .form-content > *:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .innovation-form-container {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .form-decoration {
+                display: none;
+            }
+
+            .form-content {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-content {
+                padding: 1.5rem;
+            }
+
+            .form-actions {
+                flex-direction: column-reverse;
+            }
+
+            .submit-btn, .cancel-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="innovation-form-container">
+        <div class="form-decoration">
+            <div class="decoration-pattern"></div>
+            <div class="decoration-content">
+                <div class="decoration-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="decoration-title">Partagez votre innovation</h2>
+                <p class="decoration-subtitle">Rejoignez notre communauté d'innovateurs et partagez vos idées avec le monde</p>
+                
+                <div class="decoration-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Visibilité mondiale</h4>
+                            <p>Présentez votre projet à notre réseau international</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Processus simple</h4>
+                            <p>Enregistrement rapide et intuitif</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 3C18.6569 3 20 4.34315 20 6C20 7.65685 18.6569 9 17 9C15.3431 9 14 7.65685 14 6C14 4.34315 15.3431 3 17 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Réseautage</h4>
+                            <p>Connectez-vous avec d'autres innovateurs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-content">
+            <div class="form-header">
+                <div class="form-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="form-title">Enregistrer une innovation</h1>
+                <p class="form-subtitle">Renseignez les détails de votre projet</p>
+            </div>
+
+            {{ form_start(form) }}
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="input-label">Nom du projet</label>
+                    <div class="input-wrapper">
+                        {{ form_widget(form.nom, {'attr': {'class': 'input-field', 'placeholder': 'Ex: Système de gestion intelligent'}}) }}
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label class="input-label">Secteur d'activité</label>
+                        <div class="input-wrapper">
+                            {{ form_widget(form.secteur, {'attr': {'class': 'select-field'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Pays d'origine</label>
+                        <div class="input-wrapper">
+                            {{ form_widget(form.pays, {'attr': {'class': 'select-field'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Lien du projet</label>
+                    <div class="input-wrapper with-prefix">
+                        <span class="input-prefix">https://</span>
+                        {{ form_widget(form.lien, {'attr': {'class': 'input-field', 'placeholder': 'votresite.com'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Description</label>
+                    <div class="textarea-wrapper">
+                        {{ form_widget(form.description, {'attr': {'class': 'textarea-field', 'placeholder': 'Décrivez votre innovation en détail (objectifs, fonctionnalités, avantages...)'}}) }}
+                        <div class="textarea-footer">
+                            <div class="formatting-tools">
+                                <button type="button" class="format-btn" data-format="bold" title="Gras">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 12H14C15.0609 12 16.0783 12.4214 16.8284 13.1716C17.5786 13.9217 18 14.9391 18 16C18 17.0609 17.5786 18.0783 16.8284 18.8284C16.0783 19.5786 15.0609 20 14 20H6V4H13C14.0609 4 15.0783 4.42143 15.8284 5.17157C16.5786 5.92172 17 6.93913 17 8C17 9.06087 16.5786 10.0783 15.8284 10.8284C15.0783 11.5786 14.0609 12 13 12H6V12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="format-btn" data-format="italic" title="Italique">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 4H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6 20H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M14 4L10 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="char-count">0/500 caractères</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Logo</label>
+                    <div class="upload-wrapper">
+                        {{ form_widget(form.logo, {'attr': {'class': 'upload-input'}}) }}
+                        <div class="upload-area">
+                            <div class="upload-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15" stroke="#6D4AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M17 8L12 3L7 8" stroke="#6D4AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 3V15" stroke="#6D4AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="upload-text">
+                                <p>Glissez-déposez votre logo ici</p>
+                                <span>ou <button type="button" class="browse-btn">parcourir</button></span>
+                            </div>
+                            <div class="file-info">
+                                <span class="file-name"></span>
+                                <button type="button" class="clear-file">×</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="{{ path('app_inov') }}" class="cancel-btn">Annuler</a>
+                <button type="submit" class="submit-btn">
+                    <span>Enregistrer l'innovation</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+    <script>
+        // Gestion de l'upload de fichier
+        const uploadInput = document.querySelector('.upload-input');
+        const uploadArea = document.querySelector('.upload-area');
+        const uploadText = document.querySelector('.upload-text');
+        const fileInfo = document.querySelector('.file-info');
+        const fileName = document.querySelector('.file-name');
+        const clearFile = document.querySelector('.clear-file');
+        const browseBtn = document.querySelector('.browse-btn');
+
+        // Drag and drop
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.add('active');
+        }
+
+        function unhighlight(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.remove('active');
+        }
+
+        // Gestion des fichiers
+        if (uploadInput && uploadArea) {
+            // Click sur la zone ou le bouton parcourir
+            uploadArea.addEventListener('click', () => uploadInput.click());
+            browseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                uploadInput.click();
+            });
+
+            // Changement de fichier
+            uploadInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    const file = e.target.files[0];
+                    fileName.textContent = file.name;
+                    uploadText.style.display = 'none';
+                    fileInfo.style.display = 'flex';
+                    
+                    // Afficher un aperçu si c'est une image
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            // Vous pourriez ici ajouter un aperçu de l'image
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            });
+
+            // Effacer le fichier
+            clearFile.addEventListener('click', (e) => {
+                e.stopPropagation();
+                uploadInput.value = '';
+                uploadText.style.display = 'block';
+                fileInfo.style.display = 'none';
+            });
+
+            // Gestion du drop
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files.length) {
+                    uploadInput.files = e.dataTransfer.files;
+                    const event = new Event('change');
+                    uploadInput.dispatchEvent(event);
+                }
+            });
+        }
+
+        // Compteur de caractères
+        const textarea = document.querySelector('.textarea-field');
+        const charCount = document.querySelector('.char-count');
+
+        if (textarea && charCount) {
+            textarea.addEventListener('input', () => {
+                const count = textarea.value.length;
+                charCount.textContent = `${count}/500 caractères`;
+                
+                if (count > 450) {
+                    charCount.classList.add('warning');
+                } else {
+                    charCount.classList.remove('warning');
+                }
+            });
+        }
+
+        // Barre d'outils de formatage
+        document.querySelectorAll('.format-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const format = this.getAttribute('data-format');
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+                const selectedText = textarea.value.substring(start, end);
+                
+                let formattedText = '';
+                if (format === 'bold') formattedText = `**${selectedText}**`;
+                if (format === 'italic') formattedText = `_${selectedText}_`;
+                
+                textarea.setRangeText(formattedText, start, end, 'end');
+                textarea.focus();
+                
+                // Déclenche l'événement input pour mettre à jour le compteur
+                const event = new Event('input');
+                textarea.dispatchEvent(event);
+            });
+        });
+
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            // Petite animation pour les éléments du formulaire
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((group, index) => {
+                group.style.opacity = '0';
+                group.style.transform = 'translateY(20px)';
+                group.style.transition = `all 0.4s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    group.style.opacity = '1';
+                    group.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
