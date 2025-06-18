@@ -781,9 +781,10 @@
                             </div>
                             
                             <div class="modal-footer-custom">
-                                <a href="{{ inov.lien }}" target="_blank" class="btn btn-visit">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i> Visiter le site
-                                </a>
+                                <a href="https://www.google.com/search?q={{ inov.lien | url_encode }}" target="_blank" class="btn btn-visit">
+    <i class="bi bi-box-arrow-up-right me-1"></i> Visiter le site
+</a>
+
                                 
                                 <div>
                                     <a href="{{ path('app_inovmodif', {'id': inov.id}) }}" class="btn btn-edit me-2">
