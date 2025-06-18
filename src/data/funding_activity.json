@@ -1,0 +1,28 @@
+{
+  "title": "Funding Activity",
+  "subtitle": "Monthly funding trends across African startups",
+  "time_period": "",
+  "metrics": [
+    {
+      "label": "This Month",
+      "value": "$320.9M",
+      "description": "May 2025"
+    },
+    {
+      "label": "Total Funding",
+      "value": "$1.9B",
+      "description": "In selected period"
+    },
+    {
+      "label": "Total Rounds",
+      "value": "43",
+      "description": "Active funding months"
+    }
+  ],
+  "footer_stats": {
+    "total_funding": "36.8B",
+    "total_rounds": "5 415",
+    "total_startups": "2 755"
+  },
+  "timestamp": "2025-06-01T03:52:18.729041"
+}
