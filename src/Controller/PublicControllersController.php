@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class PublicControllersController extends AbstractController
 {
-    #[Route('/public', name: 'app_public_controllers')]
+    #[Route('/', name: 'app_public_controllers')]
     public function index(InnovationRepository $innovationRepository): Response
     {
         $lastInnovations = $innovationRepository->findLastThree();
